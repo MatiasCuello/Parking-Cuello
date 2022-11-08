@@ -1,7 +1,7 @@
 ﻿
 namespace Parking.Windows
 {
-    partial class frmVehiculos
+    partial class frmClientes
     {
         /// <summary>
         /// Required designer variable.
@@ -32,7 +32,10 @@ namespace Parking.Windows
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.DatosDataGridView = new System.Windows.Forms.DataGridView();
+            this.colNombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colApellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colVehiculo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTelefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TSPVehiculos = new System.Windows.Forms.ToolStrip();
             this.NuevoToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
@@ -52,7 +55,7 @@ namespace Parking.Windows
             this.panel1.Location = new System.Drawing.Point(0, 52);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(784, 309);
-            this.panel1.TabIndex = 9;
+            this.panel1.TabIndex = 11;
             // 
             // DatosDataGridView
             // 
@@ -64,7 +67,10 @@ namespace Parking.Windows
             this.DatosDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.DatosDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DatosDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.colVehiculo});
+            this.colNombre,
+            this.colApellido,
+            this.colVehiculo,
+            this.colTelefono});
             this.DatosDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DatosDataGridView.Location = new System.Drawing.Point(0, 0);
             this.DatosDataGridView.MultiSelect = false;
@@ -75,12 +81,33 @@ namespace Parking.Windows
             this.DatosDataGridView.Size = new System.Drawing.Size(784, 309);
             this.DatosDataGridView.TabIndex = 0;
             // 
+            // colNombre
+            // 
+            this.colNombre.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colNombre.HeaderText = "Nombre";
+            this.colNombre.Name = "colNombre";
+            this.colNombre.ReadOnly = true;
+            // 
+            // colApellido
+            // 
+            this.colApellido.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colApellido.HeaderText = "Apellido";
+            this.colApellido.Name = "colApellido";
+            this.colApellido.ReadOnly = true;
+            // 
             // colVehiculo
             // 
             this.colVehiculo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.colVehiculo.HeaderText = "Vehiculo";
             this.colVehiculo.Name = "colVehiculo";
             this.colVehiculo.ReadOnly = true;
+            // 
+            // colTelefono
+            // 
+            this.colTelefono.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colTelefono.HeaderText = "Telefono";
+            this.colTelefono.Name = "colTelefono";
+            this.colTelefono.ReadOnly = true;
             // 
             // TSPVehiculos
             // 
@@ -94,7 +121,7 @@ namespace Parking.Windows
             this.TSPVehiculos.Location = new System.Drawing.Point(0, 0);
             this.TSPVehiculos.Name = "TSPVehiculos";
             this.TSPVehiculos.Size = new System.Drawing.Size(784, 52);
-            this.TSPVehiculos.TabIndex = 8;
+            this.TSPVehiculos.TabIndex = 10;
             this.TSPVehiculos.Text = "toolStrip1";
             // 
             // NuevoToolStripButton
@@ -149,7 +176,7 @@ namespace Parking.Windows
             this.tsbCerrar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.tsbCerrar.Click += new System.EventHandler(this.tsbCerrar_Click);
             // 
-            // frmVehiculos
+            // frmClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -159,9 +186,9 @@ namespace Parking.Windows
             this.Controls.Add(this.TSPVehiculos);
             this.MaximumSize = new System.Drawing.Size(800, 400);
             this.MinimumSize = new System.Drawing.Size(800, 400);
-            this.Name = "frmVehiculos";
-            this.Text = "frmVehiculos";
-            this.Load += new System.EventHandler(this.frmVehiculos_Load);
+            this.Name = "frmClientes";
+            this.Text = "frmClientes";
+            this.Load += new System.EventHandler(this.frmClientes_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.DatosDataGridView)).EndInit();
             this.TSPVehiculos.ResumeLayout(false);
@@ -175,13 +202,16 @@ namespace Parking.Windows
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.DataGridView DatosDataGridView;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colNombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colApellido;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colVehiculo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colTelefono;
         private System.Windows.Forms.ToolStrip TSPVehiculos;
         private System.Windows.Forms.ToolStripButton NuevoToolStripButton;
-        private System.Windows.Forms.ToolStripButton EditarToolStripButton;
-        private System.Windows.Forms.ToolStripButton BorrarToolStripButton;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
-        private System.Windows.Forms.ToolStripButton tsbCerrar;
+        private System.Windows.Forms.ToolStripButton EditarToolStripButton;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colVehiculo;
+        private System.Windows.Forms.ToolStripButton BorrarToolStripButton;
+        private System.Windows.Forms.ToolStripButton tsbCerrar;
     }
 }

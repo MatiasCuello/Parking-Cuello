@@ -13,9 +13,9 @@ using System.Windows.Forms;
 
 namespace Parking.Windows
 {
-    public partial class frmVehiculos : Form
+    public partial class frmClientes : Form
     {
-        public frmVehiculos()
+        public frmClientes()
         {
             InitializeComponent();
         }
@@ -24,15 +24,16 @@ namespace Parking.Windows
         {
             Close();
         }
-        private ServicioVehiculos servicio;
-        private List<Vehiculo> lista;
-        private void frmVehiculos_Load(object sender, EventArgs e)
+        private ServicioClientes servicio;
+        private List<Cliente> lista;
+        private void frmClientes_Load(object sender, EventArgs e)
         {
+
             try
             {
-                servicio = new ServicioVehiculos();
+                servicio = new ServicioClientes();
                 lista = servicio.GetLista();
-                HelperForm.MostrarDatosEnGrilla(DatosDataGridView,lista);
+                HelperForm.MostrarDatosEnGrilla(DatosDataGridView, lista);
             }
             catch (Exception ex)
             {
@@ -40,7 +41,5 @@ namespace Parking.Windows
                 throw new Exception(ex.Message);
             }
         }
-
-        
     }
 }

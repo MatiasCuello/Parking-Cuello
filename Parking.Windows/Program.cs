@@ -16,7 +16,7 @@ namespace Parking.Windows
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmVehiculos());
+            Application.Run(new frmMenuPrincipal());
         }
     }
 }

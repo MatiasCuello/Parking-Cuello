@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Parking.Repositorios", "Par
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Parking.Servicios", "Parking.Servicios\Parking.Servicios.csproj", "{043C280B-9D3C-4C96-B20A-CF630694A003}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Parking.Windows", "Parking.Windows\Parking.Windows.csproj", "{2AA05A9D-7641-4E44-A02D-1A0E6DD905B6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Parking.Windows", "Parking.Windows\Parking.Windows.csproj", "{45B23911-0AA9-4F14-A08E-E8A675961478}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,10 +29,10 @@ Global
 		{043C280B-9D3C-4C96-B20A-CF630694A003}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{043C280B-9D3C-4C96-B20A-CF630694A003}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{043C280B-9D3C-4C96-B20A-CF630694A003}.Release|Any CPU.Build.0 = Release|Any CPU
-		{2AA05A9D-7641-4E44-A02D-1A0E6DD905B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{2AA05A9D-7641-4E44-A02D-1A0E6DD905B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{2AA05A9D-7641-4E44-A02D-1A0E6DD905B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{2AA05A9D-7641-4E44-A02D-1A0E6DD905B6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{45B23911-0AA9-4F14-A08E-E8A675961478}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{45B23911-0AA9-4F14-A08E-E8A675961478}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{45B23911-0AA9-4F14-A08E-E8A675961478}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{45B23911-0AA9-4F14-A08E-E8A675961478}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

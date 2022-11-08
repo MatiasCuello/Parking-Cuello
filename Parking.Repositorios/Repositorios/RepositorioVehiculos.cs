@@ -24,7 +24,7 @@ namespace Parking.Repositorios.Repositorios
             {
                 using (var cn = conexion.AbrirConexion())
                 {
-                    string cadenaComando = "SELECT VehiculoId, Vehiculo FROM Vehiculos";
+                    string cadenaComando = "SELECT VehiculoId, TipoVehiculo FROM Vehiculos";
                     SqlCommand comando = new SqlCommand(cadenaComando, cn);
                     SqlDataReader reader = comando.ExecuteReader();
                     while (reader.Read())
