@@ -44,9 +44,14 @@
   <ItemGroup>
     <Compile Include="ConexionBD.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositorios\RepositorioClientes.cs" />
+    <Compile Include="Repositorios\RepositorioVehiculos.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Repositorios\" />
+    <ProjectReference Include="..\Parking.Entidades\Parking.Entidades.csproj">
+      <Project>{B769DD05-9128-4B0E-ABEC-53397B6DC0AB}</Project>
+      <Name>Parking.Entidades</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
