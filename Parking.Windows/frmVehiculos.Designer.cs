@@ -42,7 +42,6 @@ namespace Parking.Windows
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.tsbCerrar = new System.Windows.Forms.ToolStripButton();
             this.cmnVehiculo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cmnPatente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DatosDataGridView)).BeginInit();
             this.tspSocios.SuspendLayout();
@@ -67,8 +66,7 @@ namespace Parking.Windows
             this.DatosDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.DatosDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DatosDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.cmnVehiculo,
-            this.cmnPatente});
+            this.cmnVehiculo});
             this.DatosDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DatosDataGridView.Location = new System.Drawing.Point(0, 0);
             this.DatosDataGridView.MultiSelect = false;
@@ -167,13 +165,6 @@ namespace Parking.Windows
             this.cmnVehiculo.Name = "cmnVehiculo";
             this.cmnVehiculo.ReadOnly = true;
             // 
-            // cmnPatente
-            // 
-            this.cmnPatente.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.cmnPatente.HeaderText = "Patente";
-            this.cmnPatente.Name = "cmnPatente";
-            this.cmnPatente.ReadOnly = true;
-            // 
             // frmVehiculos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -207,6 +198,5 @@ namespace Parking.Windows
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripButton tsbCerrar;
         private System.Windows.Forms.DataGridViewTextBoxColumn cmnVehiculo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cmnPatente;
     }
 }

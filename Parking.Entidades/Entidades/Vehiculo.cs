@@ -10,6 +10,5 @@ namespace Parking.Entidades.Entidades
     {
         public int VehiculoId { get; set; }
         public string TipoVehiculo { get; set; }
-        public string Patente { get; set; }
     }
 }

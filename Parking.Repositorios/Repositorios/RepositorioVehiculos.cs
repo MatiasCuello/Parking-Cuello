@@ -24,7 +24,7 @@ namespace Parking.Repositorios.Repositorios
             {
                 using (var cn = conexion.AbrirConexion())
                 {
-                    string cadenaComando = "SELECT VehiculoId, Vehiculo, Patente FROM Vehiculos";
+                    string cadenaComando = "SELECT VehiculoId, Vehiculo FROM Vehiculos";
                     SqlCommand comando = new SqlCommand(cadenaComando, cn);
                     SqlDataReader reader = comando.ExecuteReader();
                     while (reader.Read())
@@ -49,7 +49,6 @@ namespace Parking.Repositorios.Repositorios
             var categoria = new Vehiculo();
             categoria.VehiculoId = reader.GetInt32(0);
             categoria.TipoVehiculo = reader.GetString(1);
-            categoria.Patente = reader.GetString(2);
             return categoria;
         }
     }

@@ -55,7 +55,6 @@ namespace Parking.Windows
         private void SetearFila(DataGridViewRow r, Vehiculo vehiculo)
         {
             r.Cells[cmnVehiculo.Index].Value = vehiculo.TipoVehiculo;
-            r.Cells[cmnPatente.Index].Value = vehiculo.Patente;
 
             r.Tag = vehiculo;
         }
