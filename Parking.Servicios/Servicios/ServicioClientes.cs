@@ -12,7 +12,7 @@ namespace Parking.Servicios.Servicios
     public class ServicioClientes
     {
         private RepositorioClientes repositorio;
-        private RepositorioVehiculos repositorioVehiculos;
+        private RepositorioTiposVehiculos repositorioTiposVehiculos;
 
         public ServicioClientes()
         {
@@ -27,11 +27,11 @@ namespace Parking.Servicios.Servicios
                 using (var cn = ConexionBD.GetInstancia().AbrirConexion())
                 {
                     repositorio = new RepositorioClientes(cn);
-                    repositorioVehiculos = new RepositorioVehiculos(cn);
+                    repositorioTiposVehiculos = new RepositorioTiposVehiculos(cn);
                     lista = repositorio.GetLista();
                     foreach (var cliente in lista)
                     {
-                        cliente.Vehiculo = repositorioVehiculos.GetVehiculoPorId(cliente.VehiculoId);
+                        cliente.TipoVehiculo = repositorioTiposVehiculos.GetTipoVehiculoPorId(cliente.TipoVehiculoId);
                     }
 
 
@@ -45,5 +45,38 @@ namespace Parking.Servicios.Servicios
 
         }
 
+        public bool Existe(Cliente cliente)
+        {
+            try
+            {
+                bool existe = true;
+                using (var cn = ConexionBD.GetInstancia().AbrirConexion())
+                {
+                    repositorio = new RepositorioClientes(cn);
+                    existe = repositorio.Existe(cliente);
+                    return existe;
+                }
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+        }
+
+        public void Guardar(Cliente cliente)
+        {
+            try
+            {
+                using (var cn = ConexionBD.GetInstancia().AbrirConexion())
+                {
+                    repositorio = new RepositorioClientes(cn);
+                    repositorio.Guardar(cliente);
+                }
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+        }
     }
 }

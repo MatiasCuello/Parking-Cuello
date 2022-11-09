@@ -13,9 +13,9 @@ using System.Windows.Forms;
 
 namespace Parking.Windows
 {
-    public partial class frmVehiculos : Form
+    public partial class frmTiposVehiculos : Form
     {
-        public frmVehiculos()
+        public frmTiposVehiculos()
         {
             InitializeComponent();
         }
@@ -24,13 +24,13 @@ namespace Parking.Windows
         {
             Close();
         }
-        private ServicioVehiculos servicio;
-        private List<Vehiculo> lista;
+        private ServicioTiposVehiculos servicio;
+        private List<TipoVehiculo> lista;
         private void frmVehiculos_Load(object sender, EventArgs e)
         {
             try
             {
-                servicio = new ServicioVehiculos();
+                servicio = new ServicioTiposVehiculos();
                 lista = servicio.GetLista();
                 HelperForm.MostrarDatosEnGrilla(DatosDataGridView,lista);
             }

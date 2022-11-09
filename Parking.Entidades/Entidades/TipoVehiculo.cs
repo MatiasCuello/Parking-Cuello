@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace Parking.Entidades.Entidades
 {
-    public class Vehiculo
+    public class TipoVehiculo
     {
-        public int VehiculoId { get; set; }
-        public string TipoVehiculo { get; set; }
+        public int TipoVehiculoId { get; set; }
+        public string Descripcion { get; set; }
     }
 }

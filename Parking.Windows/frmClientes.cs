@@ -41,5 +41,44 @@ namespace Parking.Windows
                 throw new Exception(ex.Message);
             }
         }
+
+        private void NuevoToolStripButton_Click(object sender, EventArgs e)
+        {
+            frmClientesAE frm = new frmClientesAE() { Text = "Nuevo Cliente" };
+            DialogResult dr = frm.ShowDialog(this);
+            if (dr == DialogResult.Cancel)
+            {
+                return;
+
+            }
+
+            try
+            {
+                Cliente cliente = frm.GetCliente();
+                if (servicio.Existe(cliente))
+                {
+                    HelperMensaje.Mensaje(TipoMensaje.ERROR, "Cliente repetido", "ERROR");
+                }
+                else
+                {
+                    servicio.Guardar(cliente);
+                    HelperMensaje.Mensaje(TipoMensaje.OK, "Cliente agregado", "Mensaje");
+                    var r = HelperGrilla.ConstruirFila(DatosDataGridView);
+                    HelperGrilla.SetearFila(r, cliente);
+                    HelperGrilla.AgregarFila(DatosDataGridView, r);
+                }
+
+            }
+            catch (Exception ex)
+            {
+                HelperMensaje.Mensaje(TipoMensaje.ERROR, ex.Message, "Error");
+            }
+        }
+
+
+
+
+
     }
 }
+

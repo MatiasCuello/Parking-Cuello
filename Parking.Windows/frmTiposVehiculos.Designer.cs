@@ -1,7 +1,7 @@
 ﻿
 namespace Parking.Windows
 {
-    partial class frmVehiculos
+    partial class frmTiposVehiculos
     {
         /// <summary>
         /// Required designer variable.

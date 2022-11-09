@@ -24,7 +24,7 @@ namespace Parking.Windows
 
         private void VehiculoButton_Click(object sender, EventArgs e)
         {
-            frmVehiculos frm = new frmVehiculos() { Text = "Vehiculos" };
+            frmTiposVehiculos frm = new frmTiposVehiculos() { Text = "Vehiculos" };
             frm.ShowDialog(this);
         }
 

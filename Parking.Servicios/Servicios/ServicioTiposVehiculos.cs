@@ -9,23 +9,23 @@ using System.Threading.Tasks;
 
 namespace Parking.Servicios.Servicios
 {
-    public class ServicioVehiculos
+    public class ServicioTiposVehiculos
     {
-        private RepositorioVehiculos repositorio;
+        private RepositorioTiposVehiculos repositorio;
 
-        public ServicioVehiculos()
+        public ServicioTiposVehiculos()
         {
 
         }
 
-        public List<Vehiculo> GetLista()
+        public List<TipoVehiculo> GetLista()
         {
             try
             {
-                List<Vehiculo> lista;
+                List<TipoVehiculo> lista;
                 using (var cn = ConexionBD.GetInstancia().AbrirConexion())
                 {
-                    repositorio = new RepositorioVehiculos(cn);
+                    repositorio = new RepositorioTiposVehiculos(cn);
                     lista = repositorio.GetLista();
                 }
 

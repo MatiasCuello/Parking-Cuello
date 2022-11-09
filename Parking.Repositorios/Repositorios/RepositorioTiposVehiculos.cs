@@ -8,27 +8,27 @@ using System.Threading.Tasks;
 
 namespace Parking.Repositorios.Repositorios
 {
-    public class RepositorioVehiculos
+    public class RepositorioTiposVehiculos
     {
         private SqlConnection conexion;
 
-        public RepositorioVehiculos(SqlConnection conexion)
+        public RepositorioTiposVehiculos(SqlConnection conexion)
         {
             this.conexion = conexion;
         }
 
-        public List<Vehiculo> GetLista()
+        public List<TipoVehiculo> GetLista()
         {
-            List<Vehiculo> lista = new List<Vehiculo>();
+            List<TipoVehiculo> lista = new List<TipoVehiculo>();
             try
             {
 
-                string cadenaComando = "SELECT VehiculoId, TipoVehiculo FROM Vehiculos";
+                string cadenaComando = "SELECT TipoVehiculoId, Descripcion FROM TiposVehiculos";
                 SqlCommand comando = new SqlCommand(cadenaComando, conexion);
                 SqlDataReader reader = comando.ExecuteReader();
                 while (reader.Read())
                 {
-                    var categoria = ConstruirVehiculo(reader);
+                    var categoria = ConstruirTipoVehiculo(reader);
                     lista.Add(categoria);
                 }
                 reader.Close();
@@ -43,24 +43,24 @@ namespace Parking.Repositorios.Repositorios
             }
         }
 
-        private Vehiculo ConstruirVehiculo(SqlDataReader reader)
+        private TipoVehiculo ConstruirTipoVehiculo(SqlDataReader reader)
         {
-            return new Vehiculo()
+            return new TipoVehiculo()
             {
-                VehiculoId = reader.GetInt32(0),
-                TipoVehiculo = reader.GetString(1),
+                TipoVehiculoId = reader.GetInt32(0),
+                Descripcion = reader.GetString(1),
             };
            
             
         }
 
-        public Vehiculo GetVehiculoPorId(int id)
+        public TipoVehiculo GetTipoVehiculoPorId(int id)
         {
 
-            Vehiculo vehiculo = null;
+            TipoVehiculo tipovehiculo = null;
             try
             {
-                    var cadenaComando = "SELECT VehiculoId, TipoVehiculo FROM Vehiculos WHERE VehiculoId=@id";
+                    var cadenaComando = "SELECT TipoVehiculoId, Descripcion FROM TiposVehiculos WHERE TipoVehiculoId=@id";
                     var comando = new SqlCommand(cadenaComando, conexion);
                     comando.Parameters.AddWithValue("@id", id);
                     using (var reader = comando.ExecuteReader())
@@ -68,11 +68,10 @@ namespace Parking.Repositorios.Repositorios
                         if (reader.HasRows)
                         {
                             reader.Read();
-                            vehiculo = ConstruirVehiculo(reader);
+                        tipovehiculo = ConstruirTipoVehiculo(reader);
                         }
                     }
-                    return vehiculo;
-
+                return tipovehiculo;
 
             }
             catch (Exception e)

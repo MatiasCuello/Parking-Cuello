@@ -31,16 +31,15 @@ namespace Parking.Windows.Helpers
         {
             switch (obj)
             {
-                case Vehiculo v:
-                    r.Cells[0].Value = v.TipoVehiculo;
+                case TipoVehiculo v:
+                    r.Cells[0].Value = v.Descripcion;
 
                     break;
 
                 case Cliente cliente:
-                    r.Cells[0].Value = cliente.Nombre;
-                    r.Cells[1].Value = cliente.Apellido;
-                    r.Cells[2].Value = cliente.Vehiculo.TipoVehiculo;
-                    r.Cells[3].Value = cliente.Telefono;
+                    r.Cells[0].Value = cliente.NombreCompleto;
+                    r.Cells[1].Value = cliente.TipoVehiculo.Descripcion;
+                    r.Cells[2].Value = cliente.Telefono;
 
                     break;
                     

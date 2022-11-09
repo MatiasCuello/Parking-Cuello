@@ -22,7 +22,7 @@ namespace Parking.Repositorios.Repositorios
             List<Cliente> lista = new List<Cliente>();
             try
             {
-                string cadenaComando = "SELECT ClienteId, Nombre, Apellido, VehiculoId, Telefono FROM Clientes";
+                string cadenaComando = "SELECT ClienteId, NombreCompleto, TipoVehiculoId, Telefono FROM Clientes";
                 SqlCommand comando = new SqlCommand(cadenaComando, conexion);
                 SqlDataReader reader = comando.ExecuteReader();
                 while (reader.Read())
@@ -47,13 +47,83 @@ namespace Parking.Repositorios.Repositorios
             return new Cliente
             {
                 ClienteId = reader.GetInt32(0),
-                Nombre = reader.GetString(1),
-                Apellido = reader.GetString(2),
-                VehiculoId = reader.GetInt32(3),
-                Telefono = reader.GetString(4)
+                NombreCompleto = reader.GetString(1),
+                TipoVehiculoId = reader.GetInt32(2),
+                Telefono = reader.GetString(3)
             };
 
 
+        }
+
+        public bool Existe(Cliente cliente)
+        {
+            if (cliente.ClienteId == 0)
+            {
+                string cadenaComando =
+                    "SELECT ClienteId, NombreCompleto FROM Clientes WHERE NombreCompleto=@nom";
+                SqlCommand comando = new SqlCommand(cadenaComando, conexion);
+                comando.Parameters.AddWithValue("@nom", cliente.NombreCompleto);
+                SqlDataReader reader = comando.ExecuteReader();
+                return reader.HasRows;
+            }
+            else
+            {
+                string cadenaComando = 
+                    "SELECT ClienteId, NombreCompleto FROM Clientes WHERE NombreCompleto=@nom AND VehiculoId<>@id";
+                SqlCommand comando = new SqlCommand(cadenaComando, conexion);
+                comando.Parameters.AddWithValue("@nom", cliente.NombreCompleto);
+                comando.Parameters.AddWithValue("@id", cliente.TipoVehiculoId);
+                SqlDataReader reader = comando.ExecuteReader();
+                return reader.HasRows;
+
+            }
+        }
+
+        public void Guardar(Cliente cliente)
+        {
+            if (cliente.ClienteId == 0)
+            {
+                try
+                {
+                    string cadenaComando =
+                        "INSERT INTO Clientes VALUES(@nom,@tipoVehiculoId,@tel)";
+                    SqlCommand comando = new SqlCommand(cadenaComando, conexion);
+                    comando.Parameters.AddWithValue("@nom", cliente.NombreCompleto);
+                    comando.Parameters.AddWithValue("@tipoVehiculoId", cliente.TipoVehiculoId);
+                    comando.Parameters.AddWithValue("@tel", cliente.Telefono);
+
+                    comando.ExecuteNonQuery();
+                    cadenaComando = "SELECT @@IDENTITY";
+                    comando = new SqlCommand(cadenaComando, conexion);
+                    cliente.ClienteId = (int)(decimal)comando.ExecuteScalar();
+
+                }
+                catch (Exception e)
+                {
+                    throw new Exception("Error al intentar guardar el registro");
+                }
+
+            }
+            else
+            {
+                try
+                {
+                    string cadenaComando = 
+                        "UPDATE Estados SET Cliente=@nom, TipoVehiculoId=@tipoVehiculoId, Telefono=@tel WHERE ClienteId=@id";
+                    SqlCommand comando = new SqlCommand(cadenaComando, conexion);
+                    comando.Parameters.AddWithValue("@nom", cliente.NombreCompleto);
+                    comando.Parameters.AddWithValue("@tipoVehiculoId", cliente.TipoVehiculoId);
+                    comando.Parameters.AddWithValue("@tel", cliente.Telefono);
+                    comando.Parameters.AddWithValue("@id", cliente.ClienteId);
+                    comando.ExecuteNonQuery();
+
+                }
+                catch (Exception e)
+                {
+                    throw new Exception("Error al intentar modificar el registro");
+                }
+
+            }
         }
     }
 }
