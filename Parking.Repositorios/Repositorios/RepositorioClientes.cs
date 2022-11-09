@@ -10,11 +10,11 @@ namespace Parking.Repositorios.Repositorios
 {
     public class RepositorioClientes
     {
-        private readonly ConexionBD conexionBd;
+        private SqlConnection conexion;
 
-        public RepositorioClientes()
+        public RepositorioClientes(SqlConnection conexion)
         {
-            conexionBd = new ConexionBD();
+            this.conexion = conexion;
         }
 
         public List<Cliente> GetLista()
@@ -22,18 +22,16 @@ namespace Parking.Repositorios.Repositorios
             List<Cliente> lista = new List<Cliente>();
             try
             {
-                using (var cn = conexionBd.AbrirConexion()) 
+                string cadenaComando = "SELECT ClienteId, Nombre, Apellido, VehiculoId, Telefono FROM Clientes";
+                SqlCommand comando = new SqlCommand(cadenaComando, conexion);
+                SqlDataReader reader = comando.ExecuteReader();
+                while (reader.Read())
                 {
-                    string cadenaComando = "SELECT ClienteId, Nombre, Apellido, VehiculoId, Telefono FROM Clientes";
-                    SqlCommand comando = new SqlCommand(cadenaComando, cn);
-                    SqlDataReader reader = comando.ExecuteReader();
-                    while (reader.Read())
-                    {
-                        var categoria = ConstruirCliente(reader);
-                        lista.Add(categoria);
-                    }
-                    reader.Close();
+                    var categoria = ConstruirCliente(reader);
+                    lista.Add(categoria);
                 }
+                reader.Close();
+
 
                 return lista;
 
@@ -46,13 +44,16 @@ namespace Parking.Repositorios.Repositorios
 
         private Cliente ConstruirCliente(SqlDataReader reader)
         {
-            var categoria = new Cliente();
-            categoria.ClienteId = reader.GetInt32(0);
-            categoria.Nombre = reader.GetString(1);
-            categoria.Apellido = reader.GetString(2);
-            categoria.VehiculoId = reader.GetInt32(3);
-            categoria.Telefono = reader.GetString(4);
-            return categoria;
+            return new Cliente
+            {
+                ClienteId = reader.GetInt32(0),
+                Nombre = reader.GetString(1),
+                Apellido = reader.GetString(2),
+                VehiculoId = reader.GetInt32(3),
+                Telefono = reader.GetString(4)
+            };
+
+
         }
     }
 }

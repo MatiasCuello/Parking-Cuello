@@ -14,6 +14,7 @@ namespace Parking.Entidades.Entidades
         public int VehiculoId { get; set; }
         public string Telefono { get; set; }
 
-        
+        public Vehiculo Vehiculo { get; set; }
+
     }
 }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Configuration;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -10,27 +11,45 @@ namespace Parking.Repositorios
 {
     public class ConexionBD
     {
-        private readonly SqlConnection cn;
-        public ConexionBD()
+        private readonly string cadenaConexion;
+        private SqlConnection cn;
+
+        public static ConexionBD instancia = null;
+
+        public static ConexionBD GetInstancia()
         {
-            var cadenaConexion = ConfigurationManager.ConnectionStrings["MiConexion"].ToString();
-            cn = new SqlConnection(cadenaConexion);
+            if (instancia == null)
+            {
+                instancia = new ConexionBD();
+            }
+
+            return instancia;
         }
+        private ConexionBD()
+        {
+            cadenaConexion = ConfigurationManager.ConnectionStrings["MiConexion"].ToString();
+
+        }
+
         public SqlConnection AbrirConexion()
         {
-            if (cn.State == System.Data.ConnectionState.Closed)
+            try
             {
+                cn = new SqlConnection(cadenaConexion);
                 cn.Open();
+                return cn;
             }
-            return cn;
+            catch (Exception)
+            {
+                throw new Exception("No se estableció la conexión");
+            }
         }
 
         public void CerrarConexion()
         {
-            if (cn.State == System.Data.ConnectionState.Open)
+            if (cn.State == ConnectionState.Open)
             {
                 cn.Close();
-
             }
         }
     }

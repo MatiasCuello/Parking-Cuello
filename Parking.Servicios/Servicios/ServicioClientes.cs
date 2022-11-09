@@ -11,24 +11,38 @@ namespace Parking.Servicios.Servicios
 {
     public class ServicioClientes
     {
-        private readonly RepositorioClientes repositorio;
-        private readonly ConexionBD conexion;
+        private RepositorioClientes repositorio;
+        private RepositorioVehiculos repositorioVehiculos;
+
         public ServicioClientes()
         {
-            repositorio = new RepositorioClientes();
+
         }
-        
 
         public List<Cliente> GetLista()
         {
             try
             {
-                return repositorio.GetLista();
+                List<Cliente> lista = null;
+                using (var cn = ConexionBD.GetInstancia().AbrirConexion())
+                {
+                    repositorio = new RepositorioClientes(cn);
+                    repositorioVehiculos = new RepositorioVehiculos(cn);
+                    lista = repositorio.GetLista();
+                    foreach (var cliente in lista)
+                    {
+                        cliente.Vehiculo = repositorioVehiculos.GetVehiculoPorId(cliente.VehiculoId);
+                    }
+
+
+                    return lista;
+                }
             }
             catch (Exception e)
             {
                 throw new Exception(e.Message);
             }
+
         }
 
     }
