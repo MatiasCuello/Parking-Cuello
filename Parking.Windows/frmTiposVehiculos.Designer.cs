@@ -149,7 +149,7 @@ namespace Parking.Windows
             this.tsbCerrar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.tsbCerrar.Click += new System.EventHandler(this.tsbCerrar_Click);
             // 
-            // frmVehiculos
+            // frmTiposVehiculos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -159,7 +159,7 @@ namespace Parking.Windows
             this.Controls.Add(this.TSPVehiculos);
             this.MaximumSize = new System.Drawing.Size(800, 400);
             this.MinimumSize = new System.Drawing.Size(800, 400);
-            this.Name = "frmVehiculos";
+            this.Name = "frmTiposVehiculos";
             this.Text = "frmVehiculos";
             this.Load += new System.EventHandler(this.frmVehiculos_Load);
             this.panel1.ResumeLayout(false);

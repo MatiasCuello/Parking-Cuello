@@ -47,19 +47,62 @@ namespace Parking.Windows
             return cliente;
         }
 
-        private void TipoVehiculoLabel_Click(object sender, EventArgs e)
-        {
 
+
+        private void OkButton_Click(object sender, EventArgs e)
+        {
+            if (ValidarDatos())
+            {
+                if (cliente == null)
+                {
+                    cliente = new Cliente();
+                }
+
+                cliente.NombreCompleto = NombreCompletoTextBox.Text;
+                cliente.Telefono = TelefonoTextBox.Text;
+                cliente.Direccion = DireccionTextBox.Text;
+                cliente.TipoVehiculoId = (int)TipoVehiculoComboBox.SelectedValue;
+          
+                DialogResult = DialogResult.OK;
+            }
         }
 
-        private void TipoVehiculoComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        private bool ValidarDatos()
         {
+            bool valido = true;
+            errorProvider1.Clear();
+            if (string.IsNullOrEmpty(NombreCompletoTextBox.Text))
+            {
+                valido = false;
+                errorProvider1.SetError(NombreCompletoTextBox, "El nombre del cliente es requerido");
+            }
 
+            if (string.IsNullOrEmpty(DireccionTextBox.Text))
+            {
+                valido = false;
+                errorProvider1.SetError(DireccionTextBox, "La dirección del cliente es obligatoria");
+            }
+
+            if (string.IsNullOrEmpty(TelefonoTextBox.Text))
+            {
+                valido = false;
+                errorProvider1.SetError(TelefonoTextBox, "El Telefono del cliente es requerido");
+            }
+
+            if (TipoVehiculoComboBox.SelectedIndex == 0)
+            {
+                valido = false;
+                errorProvider1.SetError(TipoVehiculoComboBox, "Debe seleccionar un tipo de vehiculo");
+            }
+
+
+            return valido;
         }
 
-        private void NombreLabel_Click(object sender, EventArgs e)
+        private void NombreCompletoLabel_Click(object sender, EventArgs e)
         {
 
         }
     }
-}
+    }
+

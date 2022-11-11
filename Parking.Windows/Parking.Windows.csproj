@@ -151,6 +151,29 @@
   <ItemGroup>
     <None Include="Resources\OK.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\icons8-clients-40.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-vehicles-40.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-parking-lot-100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-parking-lot-40.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-parking-lot-60.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\garage_100pxp1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-parking-60.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-parking-40.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

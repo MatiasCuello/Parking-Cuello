@@ -29,10 +29,11 @@ namespace Parking.Windows
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.DatosDataGridView = new System.Windows.Forms.DataGridView();
             this.colNombreCompleto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colDireccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colTipoVehiculo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colTelefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TSPVehiculos = new System.Windows.Forms.ToolStrip();
@@ -62,11 +63,12 @@ namespace Parking.Windows
             this.DatosDataGridView.AllowUserToDeleteRows = false;
             this.DatosDataGridView.AllowUserToResizeColumns = false;
             this.DatosDataGridView.AllowUserToResizeRows = false;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Silver;
-            this.DatosDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Silver;
+            this.DatosDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.DatosDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DatosDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colNombreCompleto,
+            this.colDireccion,
             this.colTipoVehiculo,
             this.colTelefono});
             this.DatosDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -86,6 +88,13 @@ namespace Parking.Windows
             this.colNombreCompleto.Name = "colNombreCompleto";
             this.colNombreCompleto.ReadOnly = true;
             // 
+            // colDireccion
+            // 
+            this.colDireccion.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colDireccion.HeaderText = "Direccion";
+            this.colDireccion.Name = "colDireccion";
+            this.colDireccion.ReadOnly = true;
+            // 
             // colTipoVehiculo
             // 
             this.colTipoVehiculo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
@@ -102,6 +111,7 @@ namespace Parking.Windows
             // 
             // TSPVehiculos
             // 
+            this.TSPVehiculos.BackColor = System.Drawing.Color.White;
             this.TSPVehiculos.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.NuevoToolStripButton,
             this.toolStripSeparator2,
@@ -202,6 +212,7 @@ namespace Parking.Windows
         private System.Windows.Forms.ToolStripButton BorrarToolStripButton;
         private System.Windows.Forms.ToolStripButton tsbCerrar;
         private System.Windows.Forms.DataGridViewTextBoxColumn colNombreCompleto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colDireccion;
         private System.Windows.Forms.DataGridViewTextBoxColumn colTipoVehiculo;
         private System.Windows.Forms.DataGridViewTextBoxColumn colTelefono;
     }

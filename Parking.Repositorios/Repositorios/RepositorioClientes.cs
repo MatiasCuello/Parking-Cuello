@@ -22,7 +22,7 @@ namespace Parking.Repositorios.Repositorios
             List<Cliente> lista = new List<Cliente>();
             try
             {
-                string cadenaComando = "SELECT ClienteId, NombreCompleto, TipoVehiculoId, Telefono FROM Clientes";
+                string cadenaComando = "SELECT ClienteId, NombreCompleto, Direccion, TipoVehiculoId, Telefono FROM Clientes";
                 SqlCommand comando = new SqlCommand(cadenaComando, conexion);
                 SqlDataReader reader = comando.ExecuteReader();
                 while (reader.Read())
@@ -48,8 +48,9 @@ namespace Parking.Repositorios.Repositorios
             {
                 ClienteId = reader.GetInt32(0),
                 NombreCompleto = reader.GetString(1),
-                TipoVehiculoId = reader.GetInt32(2),
-                Telefono = reader.GetString(3)
+                Direccion=reader.GetString(2),
+                TipoVehiculoId = reader.GetInt32(3),
+                Telefono = reader.GetString(4)
             };
 
 
@@ -68,11 +69,11 @@ namespace Parking.Repositorios.Repositorios
             }
             else
             {
-                string cadenaComando = 
-                    "SELECT ClienteId, NombreCompleto FROM Clientes WHERE NombreCompleto=@nom AND VehiculoId<>@id";
+                string cadenaComando =
+                    "SELECT ClienteId, NombreCompleto FROM Clientes WHERE NombreCompleto=@nom AND TipoVehiculoId<>@tipoVehiculoId";
                 SqlCommand comando = new SqlCommand(cadenaComando, conexion);
                 comando.Parameters.AddWithValue("@nom", cliente.NombreCompleto);
-                comando.Parameters.AddWithValue("@id", cliente.TipoVehiculoId);
+                comando.Parameters.AddWithValue("@tipoVehiculoId", cliente.TipoVehiculoId);
                 SqlDataReader reader = comando.ExecuteReader();
                 return reader.HasRows;
 
@@ -86,9 +87,10 @@ namespace Parking.Repositorios.Repositorios
                 try
                 {
                     string cadenaComando =
-                        "INSERT INTO Clientes VALUES(@nom,@tipoVehiculoId,@tel)";
+                        "INSERT INTO Clientes VALUES(@nom,@dir,@tipoVehiculoId,@tel)";
                     SqlCommand comando = new SqlCommand(cadenaComando, conexion);
                     comando.Parameters.AddWithValue("@nom", cliente.NombreCompleto);
+                    comando.Parameters.AddWithValue("@dir", cliente.Direccion);
                     comando.Parameters.AddWithValue("@tipoVehiculoId", cliente.TipoVehiculoId);
                     comando.Parameters.AddWithValue("@tel", cliente.Telefono);
 
@@ -109,9 +111,10 @@ namespace Parking.Repositorios.Repositorios
                 try
                 {
                     string cadenaComando = 
-                        "UPDATE Estados SET Cliente=@nom, TipoVehiculoId=@tipoVehiculoId, Telefono=@tel WHERE ClienteId=@id";
+                        "UPDATE Estados SET Cliente=@nom, Direccion=@dir,TipoVehiculoId=@tipoVehiculoId, Telefono=@tel WHERE ClienteId=@id";
                     SqlCommand comando = new SqlCommand(cadenaComando, conexion);
                     comando.Parameters.AddWithValue("@nom", cliente.NombreCompleto);
+                    comando.Parameters.AddWithValue("@dir", cliente.Direccion);
                     comando.Parameters.AddWithValue("@tipoVehiculoId", cliente.TipoVehiculoId);
                     comando.Parameters.AddWithValue("@tel", cliente.Telefono);
                     comando.Parameters.AddWithValue("@id", cliente.ClienteId);

@@ -38,8 +38,9 @@ namespace Parking.Windows.Helpers
 
                 case Cliente cliente:
                     r.Cells[0].Value = cliente.NombreCompleto;
-                    r.Cells[1].Value = cliente.TipoVehiculo.Descripcion;
-                    r.Cells[2].Value = cliente.Telefono;
+                    r.Cells[1].Value = cliente.Direccion;
+                    r.Cells[2].Value = cliente.TipoVehiculo.Descripcion;
+                    r.Cells[3].Value = cliente.Telefono;
 
                     break;
                     

@@ -42,7 +42,10 @@ namespace Parking.Windows
             this.TelefonoTextBox = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
+            this.DireccionTextBox = new System.Windows.Forms.TextBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.DireccionLabel = new System.Windows.Forms.Label();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.OkButton = new System.Windows.Forms.Button();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
@@ -50,6 +53,7 @@ namespace Parking.Windows
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
@@ -100,15 +104,14 @@ namespace Parking.Windows
             // 
             this.TipoVehiculoComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.TipoVehiculoComboBox.FormattingEnabled = true;
-            this.TipoVehiculoComboBox.Location = new System.Drawing.Point(188, 78);
+            this.TipoVehiculoComboBox.Location = new System.Drawing.Point(188, 105);
             this.TipoVehiculoComboBox.Name = "TipoVehiculoComboBox";
             this.TipoVehiculoComboBox.Size = new System.Drawing.Size(298, 21);
             this.TipoVehiculoComboBox.TabIndex = 197;
-            this.TipoVehiculoComboBox.SelectedIndexChanged += new System.EventHandler(this.TipoVehiculoComboBox_SelectedIndexChanged);
             // 
             // NombreCompletoTextBox
             // 
-            this.NombreCompletoTextBox.Location = new System.Drawing.Point(188, 37);
+            this.NombreCompletoTextBox.Location = new System.Drawing.Point(188, 26);
             this.NombreCompletoTextBox.MaxLength = 100;
             this.NombreCompletoTextBox.Name = "NombreCompletoTextBox";
             this.NombreCompletoTextBox.Size = new System.Drawing.Size(298, 20);
@@ -119,31 +122,30 @@ namespace Parking.Windows
             this.TipoVehiculoLabel.AutoSize = true;
             this.TipoVehiculoLabel.BackColor = System.Drawing.Color.Gainsboro;
             this.TipoVehiculoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TipoVehiculoLabel.Location = new System.Drawing.Point(49, 77);
+            this.TipoVehiculoLabel.Location = new System.Drawing.Point(47, 104);
             this.TipoVehiculoLabel.Name = "TipoVehiculoLabel";
             this.TipoVehiculoLabel.Size = new System.Drawing.Size(108, 16);
             this.TipoVehiculoLabel.TabIndex = 202;
             this.TipoVehiculoLabel.Text = "Tipo Vehiculo:";
-            this.TipoVehiculoLabel.Click += new System.EventHandler(this.TipoVehiculoLabel_Click);
             // 
             // NombreCompletoLabel
             // 
             this.NombreCompletoLabel.AutoSize = true;
             this.NombreCompletoLabel.BackColor = System.Drawing.Color.Gainsboro;
             this.NombreCompletoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NombreCompletoLabel.Location = new System.Drawing.Point(49, 38);
+            this.NombreCompletoLabel.Location = new System.Drawing.Point(47, 31);
             this.NombreCompletoLabel.Name = "NombreCompletoLabel";
             this.NombreCompletoLabel.Size = new System.Drawing.Size(137, 16);
             this.NombreCompletoLabel.TabIndex = 205;
             this.NombreCompletoLabel.Text = "Nombre Completo:";
-            this.NombreCompletoLabel.Click += new System.EventHandler(this.NombreLabel_Click);
+            this.NombreCompletoLabel.Click += new System.EventHandler(this.NombreCompletoLabel_Click);
             // 
             // TelefonoLabel
             // 
             this.TelefonoLabel.AutoSize = true;
             this.TelefonoLabel.BackColor = System.Drawing.Color.Gainsboro;
             this.TelefonoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TelefonoLabel.Location = new System.Drawing.Point(47, 112);
+            this.TelefonoLabel.Location = new System.Drawing.Point(47, 139);
             this.TelefonoLabel.Name = "TelefonoLabel";
             this.TelefonoLabel.Size = new System.Drawing.Size(74, 16);
             this.TelefonoLabel.TabIndex = 204;
@@ -151,7 +153,7 @@ namespace Parking.Windows
             // 
             // TelefonoTextBox
             // 
-            this.TelefonoTextBox.Location = new System.Drawing.Point(188, 111);
+            this.TelefonoTextBox.Location = new System.Drawing.Point(188, 138);
             this.TelefonoTextBox.MaxLength = 100;
             this.TelefonoTextBox.Name = "TelefonoTextBox";
             this.TelefonoTextBox.Size = new System.Drawing.Size(298, 20);
@@ -161,10 +163,13 @@ namespace Parking.Windows
             // 
             this.panel2.BackColor = System.Drawing.Color.Gainsboro;
             this.panel2.Controls.Add(this.pictureBox8);
+            this.panel2.Controls.Add(this.DireccionTextBox);
             this.panel2.Controls.Add(this.NombreCompletoTextBox);
             this.panel2.Controls.Add(this.TipoVehiculoComboBox);
+            this.panel2.Controls.Add(this.pictureBox2);
             this.panel2.Controls.Add(this.pictureBox6);
             this.panel2.Controls.Add(this.TelefonoTextBox);
+            this.panel2.Controls.Add(this.DireccionLabel);
             this.panel2.Controls.Add(this.pictureBox7);
             this.panel2.Controls.Add(this.NombreCompletoLabel);
             this.panel2.Controls.Add(this.TipoVehiculoLabel);
@@ -177,25 +182,53 @@ namespace Parking.Windows
             // pictureBox8
             // 
             this.pictureBox8.BackColor = System.Drawing.Color.Gainsboro;
-            this.pictureBox8.Location = new System.Drawing.Point(15, 99);
+            this.pictureBox8.Location = new System.Drawing.Point(15, 126);
             this.pictureBox8.Name = "pictureBox8";
             this.pictureBox8.Size = new System.Drawing.Size(28, 29);
             this.pictureBox8.TabIndex = 209;
             this.pictureBox8.TabStop = false;
             // 
+            // DireccionTextBox
+            // 
+            this.DireccionTextBox.Location = new System.Drawing.Point(188, 61);
+            this.DireccionTextBox.MaxLength = 100;
+            this.DireccionTextBox.Name = "DireccionTextBox";
+            this.DireccionTextBox.Size = new System.Drawing.Size(298, 20);
+            this.DireccionTextBox.TabIndex = 195;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.Color.Gainsboro;
+            this.pictureBox2.Location = new System.Drawing.Point(15, 53);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(28, 29);
+            this.pictureBox2.TabIndex = 211;
+            this.pictureBox2.TabStop = false;
+            // 
             // pictureBox6
             // 
             this.pictureBox6.BackColor = System.Drawing.Color.Gainsboro;
-            this.pictureBox6.Location = new System.Drawing.Point(15, 29);
+            this.pictureBox6.Location = new System.Drawing.Point(15, 18);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(28, 29);
             this.pictureBox6.TabIndex = 211;
             this.pictureBox6.TabStop = false;
             // 
+            // DireccionLabel
+            // 
+            this.DireccionLabel.AutoSize = true;
+            this.DireccionLabel.BackColor = System.Drawing.Color.Gainsboro;
+            this.DireccionLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DireccionLabel.Location = new System.Drawing.Point(49, 66);
+            this.DireccionLabel.Name = "DireccionLabel";
+            this.DireccionLabel.Size = new System.Drawing.Size(78, 16);
+            this.DireccionLabel.TabIndex = 205;
+            this.DireccionLabel.Text = "Direccion:";
+            // 
             // pictureBox7
             // 
             this.pictureBox7.BackColor = System.Drawing.Color.Gainsboro;
-            this.pictureBox7.Location = new System.Drawing.Point(15, 64);
+            this.pictureBox7.Location = new System.Drawing.Point(15, 91);
             this.pictureBox7.Name = "pictureBox7";
             this.pictureBox7.Size = new System.Drawing.Size(28, 29);
             this.pictureBox7.TabIndex = 210;
@@ -212,6 +245,7 @@ namespace Parking.Windows
             this.OkButton.Text = "OK";
             this.OkButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.OkButton.UseVisualStyleBackColor = false;
+            this.OkButton.Click += new System.EventHandler(this.OkButton_Click);
             // 
             // errorProvider1
             // 
@@ -236,6 +270,7 @@ namespace Parking.Windows
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
@@ -261,5 +296,8 @@ namespace Parking.Windows
         private System.Windows.Forms.TextBox TelefonoTextBox;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.TextBox DireccionTextBox;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Label DireccionLabel;
     }
 }
