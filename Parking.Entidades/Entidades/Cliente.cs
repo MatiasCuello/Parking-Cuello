@@ -11,10 +11,8 @@ namespace Parking.Entidades.Entidades
         public int ClienteId { get; set; }
         public string NombreCompleto { get; set; }
         public string Direccion { get; set; }
-        public int TipoVehiculoId { get; set; }
         public string Telefono { get; set; }
-
-        public TipoVehiculo TipoVehiculo { get; set; }
+        public byte[] RowVersion { get; set; }
 
     }
 }

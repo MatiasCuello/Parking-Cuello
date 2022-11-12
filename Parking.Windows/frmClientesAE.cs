@@ -23,12 +23,12 @@ namespace Parking.Windows
         protected override void OnLoad(EventArgs e)
         {
             base.OnLoad(e);
-            HelperCombos.CargarDatosComboTiposVehiculos(ref TipoVehiculoComboBox);
+
             if (cliente != null)
             {
                 NombreCompletoTextBox.Text = cliente.NombreCompleto;
+                DireccionTextBox.Text = cliente.Direccion;
                 TelefonoTextBox.Text = cliente.Telefono;
-                HelperCombos.CargarDatosComboTiposVehiculos(ref TipoVehiculoComboBox);
 
             }
         }
@@ -59,10 +59,9 @@ namespace Parking.Windows
                 }
 
                 cliente.NombreCompleto = NombreCompletoTextBox.Text;
-                cliente.Telefono = TelefonoTextBox.Text;
                 cliente.Direccion = DireccionTextBox.Text;
-                cliente.TipoVehiculoId = (int)TipoVehiculoComboBox.SelectedValue;
-          
+                cliente.Telefono = TelefonoTextBox.Text;
+
                 DialogResult = DialogResult.OK;
             }
         }
@@ -89,17 +88,33 @@ namespace Parking.Windows
                 errorProvider1.SetError(TelefonoTextBox, "El Telefono del cliente es requerido");
             }
 
-            if (TipoVehiculoComboBox.SelectedIndex == 0)
-            {
-                valido = false;
-                errorProvider1.SetError(TipoVehiculoComboBox, "Debe seleccionar un tipo de vehiculo");
-            }
+
 
 
             return valido;
         }
 
+        internal void SetCliente(Cliente cliente)
+        {
+            this.cliente = cliente;
+        }
+
         private void NombreCompletoLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void DireccionTextBox_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void DatosClientesLabel_Click(object sender, EventArgs e)
         {
 
         }

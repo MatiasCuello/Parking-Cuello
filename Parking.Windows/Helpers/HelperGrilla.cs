@@ -36,14 +36,20 @@ namespace Parking.Windows.Helpers
 
                     break;
 
-                case Cliente cliente:
-                    r.Cells[0].Value = cliente.NombreCompleto;
-                    r.Cells[1].Value = cliente.Direccion;
-                    r.Cells[2].Value = cliente.TipoVehiculo.Descripcion;
-                    r.Cells[3].Value = cliente.Telefono;
+                case Cliente c:
+                    r.Cells[0].Value = c.NombreCompleto;
+                    r.Cells[1].Value = c.Direccion;
+                    r.Cells[2].Value = c.Telefono;
 
                     break;
-                    
+                case Tarifa tarifa:
+
+                    r.Cells[0].Value = tarifa.TipoVehiculo.Descripcion;
+                    r.Cells[1].Value = tarifa.TiempoId;
+                    r.Cells[2].Value = tarifa.Importe;
+
+                    break;
+
             }
 
             r.Tag = obj;

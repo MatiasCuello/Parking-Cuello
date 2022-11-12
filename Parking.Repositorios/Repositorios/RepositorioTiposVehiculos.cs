@@ -28,8 +28,8 @@ namespace Parking.Repositorios.Repositorios
                 SqlDataReader reader = comando.ExecuteReader();
                 while (reader.Read())
                 {
-                    var categoria = ConstruirTipoVehiculo(reader);
-                    lista.Add(categoria);
+                    var tipoVehiculo = ConstruirTipoVehiculo(reader);
+                    lista.Add(tipoVehiculo);
                 }
                 reader.Close();
 
@@ -48,7 +48,7 @@ namespace Parking.Repositorios.Repositorios
             return new TipoVehiculo()
             {
                 TipoVehiculoId = reader.GetInt32(0),
-                Descripcion = reader.GetString(1),
+                Descripcion = reader.GetString(1)
             };
            
             
@@ -77,7 +77,7 @@ namespace Parking.Repositorios.Repositorios
             catch (Exception e)
             {
 
-                throw e;
+                throw new Exception(e.Message);
             }
         }
     }

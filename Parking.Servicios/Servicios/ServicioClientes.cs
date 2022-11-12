@@ -12,7 +12,7 @@ namespace Parking.Servicios.Servicios
     public class ServicioClientes
     {
         private RepositorioClientes repositorio;
-        private RepositorioTiposVehiculos repositorioTiposVehiculos;
+
 
         public ServicioClientes()
         {
@@ -27,12 +27,9 @@ namespace Parking.Servicios.Servicios
                 using (var cn = ConexionBD.GetInstancia().AbrirConexion())
                 {
                     repositorio = new RepositorioClientes(cn);
-                    repositorioTiposVehiculos = new RepositorioTiposVehiculos(cn);
+
                     lista = repositorio.GetLista();
-                    foreach (var cliente in lista)
-                    {
-                        cliente.TipoVehiculo = repositorioTiposVehiculos.GetTipoVehiculoPorId(cliente.TipoVehiculoId);
-                    }
+
 
 
                     return lista;
@@ -78,5 +75,55 @@ namespace Parking.Servicios.Servicios
                 throw new Exception(e.Message);
             }
         }
+
+        public bool EstaRelacionado(Cliente c)
+        {
+
+            try
+            {
+                using (var cn = ConexionBD.GetInstancia().AbrirConexion())
+                {
+                    repositorio = new RepositorioClientes(cn);
+                    return repositorio.EstaRelacionado(c);
+                }
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+
+        }
+
+        public void Borrar(int clienteId)
+        {
+            try
+            {
+                using (var cn = ConexionBD.GetInstancia().AbrirConexion())
+                {
+                    repositorio = new RepositorioClientes(cn);
+                    repositorio.Borrar(clienteId);
+                }
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+        }
+
+        //public int Editar(Cliente cliente)
+        //{
+        //    try
+        //    {
+        //        using (var cn = ConexionBD.GetInstancia().AbrirConexion())
+        //        {
+        //            repositorio = new RepositorioClientes(cn);
+        //            return repositorio.Editar(cliente);
+        //        }
+        //    }
+        //    catch (Exception e)
+        //    {
+        //        throw new Exception(e.Message);
+        //    }
+        //}
     }
 }

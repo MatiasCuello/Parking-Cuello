@@ -53,6 +53,12 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmTarifas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTarifas.Designer.cs">
+      <DependentUpon>frmTarifas.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmClientes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -92,6 +98,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmMenuPrincipal.resx">
       <DependentUpon>frmMenuPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTarifas.resx">
+      <DependentUpon>frmTarifas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmTiposVehiculos.resx">
       <DependentUpon>frmTiposVehiculos.cs</DependentUpon>
@@ -174,6 +183,27 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icons8-parking-40.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Salir.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\nombre.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ubicacion.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tipoveh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\telefono.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cliente100px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\abono40px.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

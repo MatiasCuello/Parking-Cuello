@@ -22,7 +22,7 @@ namespace Parking.Repositorios.Repositorios
             List<Cliente> lista = new List<Cliente>();
             try
             {
-                string cadenaComando = "SELECT ClienteId, NombreCompleto, Direccion, TipoVehiculoId, Telefono FROM Clientes";
+                string cadenaComando = "SELECT ClienteId, NombreCompleto, Direccion, Telefono, RowVersion FROM Clientes";
                 SqlCommand comando = new SqlCommand(cadenaComando, conexion);
                 SqlDataReader reader = comando.ExecuteReader();
                 while (reader.Read())
@@ -48,9 +48,8 @@ namespace Parking.Repositorios.Repositorios
             {
                 ClienteId = reader.GetInt32(0),
                 NombreCompleto = reader.GetString(1),
-                Direccion=reader.GetString(2),
-                TipoVehiculoId = reader.GetInt32(3),
-                Telefono = reader.GetString(4)
+                Direccion = reader.GetString(2),
+                Telefono = reader.GetString(3)
             };
 
 
@@ -58,27 +57,55 @@ namespace Parking.Repositorios.Repositorios
 
         public bool Existe(Cliente cliente)
         {
-            if (cliente.ClienteId == 0)
+
+            try
             {
-                string cadenaComando =
-                    "SELECT ClienteId, NombreCompleto FROM Clientes WHERE NombreCompleto=@nom";
-                SqlCommand comando = new SqlCommand(cadenaComando, conexion);
+                var cadenaComando = "SELECT ClienteId, NombreCompleto FROM Clientes WHERE NombreCompleto=@nom";
+                var comando = new SqlCommand(cadenaComando, conexion);
                 comando.Parameters.AddWithValue("@nom", cliente.NombreCompleto);
-                SqlDataReader reader = comando.ExecuteReader();
+                var reader = comando.ExecuteReader();
                 return reader.HasRows;
             }
-            else
+            catch (Exception e)
             {
-                string cadenaComando =
-                    "SELECT ClienteId, NombreCompleto FROM Clientes WHERE NombreCompleto=@nom AND TipoVehiculoId<>@tipoVehiculoId";
-                SqlCommand comando = new SqlCommand(cadenaComando, conexion);
-                comando.Parameters.AddWithValue("@nom", cliente.NombreCompleto);
-                comando.Parameters.AddWithValue("@tipoVehiculoId", cliente.TipoVehiculoId);
-                SqlDataReader reader = comando.ExecuteReader();
-                return reader.HasRows;
 
+                throw new Exception(e.Message);
+            }
+
+
+
+        }
+        public bool EstaRelacionado(Cliente c)
+        {
+            try
+            {
+                var cadenaComando = "SELECT COUNT(*) FROM CuentasCorrientes WHERE ClienteId=@id";
+                var comando = new SqlCommand(cadenaComando, conexion);
+                comando.Parameters.AddWithValue("@id", c.ClienteId);
+                return (int)comando.ExecuteScalar() > 0;
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
             }
         }
+
+        public void Borrar(int clienteId)
+        {
+
+            try
+            {
+                string cadenaComando = "DELETE FROM Clientes WHERE ClienteId=@id";
+                SqlCommand comando = new SqlCommand(cadenaComando, conexion);
+                comando.Parameters.AddWithValue("@id", clienteId);
+                comando.ExecuteNonQuery();
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+        }
+
 
         public void Guardar(Cliente cliente)
         {
@@ -87,11 +114,11 @@ namespace Parking.Repositorios.Repositorios
                 try
                 {
                     string cadenaComando =
-                        "INSERT INTO Clientes VALUES(@nom,@dir,@tipoVehiculoId,@tel)";
+                        "INSERT INTO Clientes (NombreCompleto, Direccion, Telefono)" +
+                        " VALUES (@nom, @dir, @tel)";
                     SqlCommand comando = new SqlCommand(cadenaComando, conexion);
                     comando.Parameters.AddWithValue("@nom", cliente.NombreCompleto);
                     comando.Parameters.AddWithValue("@dir", cliente.Direccion);
-                    comando.Parameters.AddWithValue("@tipoVehiculoId", cliente.TipoVehiculoId);
                     comando.Parameters.AddWithValue("@tel", cliente.Telefono);
 
                     comando.ExecuteNonQuery();
@@ -99,8 +126,13 @@ namespace Parking.Repositorios.Repositorios
                     comando = new SqlCommand(cadenaComando, conexion);
                     cliente.ClienteId = (int)(decimal)comando.ExecuteScalar();
 
+                    cadenaComando = "SELECT RowVersion FROM Clientes WHERE ClienteId=@id";
+                    comando = new SqlCommand(cadenaComando, conexion);
+                    comando.Parameters.AddWithValue("@id", cliente.ClienteId);
+                    cliente.RowVersion = (byte[])comando.ExecuteScalar();
+
                 }
-                catch (Exception e)
+                catch (Exception)
                 {
                     throw new Exception("Error al intentar guardar el registro");
                 }
@@ -110,12 +142,12 @@ namespace Parking.Repositorios.Repositorios
             {
                 try
                 {
-                    string cadenaComando = 
-                        "UPDATE Estados SET Cliente=@nom, Direccion=@dir,TipoVehiculoId=@tipoVehiculoId, Telefono=@tel WHERE ClienteId=@id";
+                    string cadenaComando =
+                        "UPDATE Clientes SET NombreCompleto=@nom, Direccion=@dir, Telefono=@tel " +
+                        "WHERE ClienteId=@id";
                     SqlCommand comando = new SqlCommand(cadenaComando, conexion);
                     comando.Parameters.AddWithValue("@nom", cliente.NombreCompleto);
                     comando.Parameters.AddWithValue("@dir", cliente.Direccion);
-                    comando.Parameters.AddWithValue("@tipoVehiculoId", cliente.TipoVehiculoId);
                     comando.Parameters.AddWithValue("@tel", cliente.Telefono);
                     comando.Parameters.AddWithValue("@id", cliente.ClienteId);
                     comando.ExecuteNonQuery();

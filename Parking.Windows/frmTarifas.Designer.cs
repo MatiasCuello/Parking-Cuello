@@ -1,7 +1,7 @@
 ﻿
 namespace Parking.Windows
 {
-    partial class frmTiposVehiculos
+    partial class frmTarifas
     {
         /// <summary>
         /// Required designer variable.
@@ -29,12 +29,14 @@ namespace Parking.Windows
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.DatosDataGridView = new System.Windows.Forms.DataGridView();
             this.colVehiculo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tsbCerrar = new System.Windows.Forms.ToolStripButton();
+            this.colTiempo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colImporte = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TSPVehiculos = new System.Windows.Forms.ToolStrip();
+            this.tsbCerrar = new System.Windows.Forms.ToolStripButton();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DatosDataGridView)).BeginInit();
             this.TSPVehiculos.SuspendLayout();
@@ -46,8 +48,8 @@ namespace Parking.Windows
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 52);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(784, 309);
-            this.panel1.TabIndex = 9;
+            this.panel1.Size = new System.Drawing.Size(1008, 677);
+            this.panel1.TabIndex = 13;
             // 
             // DatosDataGridView
             // 
@@ -55,11 +57,13 @@ namespace Parking.Windows
             this.DatosDataGridView.AllowUserToDeleteRows = false;
             this.DatosDataGridView.AllowUserToResizeColumns = false;
             this.DatosDataGridView.AllowUserToResizeRows = false;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Silver;
-            this.DatosDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Silver;
+            this.DatosDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.DatosDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DatosDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.colVehiculo});
+            this.colVehiculo,
+            this.colTiempo,
+            this.colImporte});
             this.DatosDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DatosDataGridView.Location = new System.Drawing.Point(0, 0);
             this.DatosDataGridView.MultiSelect = false;
@@ -67,7 +71,7 @@ namespace Parking.Windows
             this.DatosDataGridView.ReadOnly = true;
             this.DatosDataGridView.RowHeadersVisible = false;
             this.DatosDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DatosDataGridView.Size = new System.Drawing.Size(784, 309);
+            this.DatosDataGridView.Size = new System.Drawing.Size(1008, 677);
             this.DatosDataGridView.TabIndex = 0;
             // 
             // colVehiculo
@@ -76,6 +80,31 @@ namespace Parking.Windows
             this.colVehiculo.HeaderText = "Vehiculo";
             this.colVehiculo.Name = "colVehiculo";
             this.colVehiculo.ReadOnly = true;
+            // 
+            // colTiempo
+            // 
+            this.colTiempo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colTiempo.HeaderText = "Tiempo";
+            this.colTiempo.Name = "colTiempo";
+            this.colTiempo.ReadOnly = true;
+            // 
+            // colImporte
+            // 
+            this.colImporte.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colImporte.HeaderText = "Importe";
+            this.colImporte.Name = "colImporte";
+            this.colImporte.ReadOnly = true;
+            // 
+            // TSPVehiculos
+            // 
+            this.TSPVehiculos.BackColor = System.Drawing.Color.White;
+            this.TSPVehiculos.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tsbCerrar});
+            this.TSPVehiculos.Location = new System.Drawing.Point(0, 0);
+            this.TSPVehiculos.Name = "TSPVehiculos";
+            this.TSPVehiculos.Size = new System.Drawing.Size(1008, 52);
+            this.TSPVehiculos.TabIndex = 12;
+            this.TSPVehiculos.Text = "toolStrip1";
             // 
             // tsbCerrar
             // 
@@ -89,30 +118,18 @@ namespace Parking.Windows
             this.tsbCerrar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.tsbCerrar.Click += new System.EventHandler(this.tsbCerrar_Click);
             // 
-            // TSPVehiculos
-            // 
-            this.TSPVehiculos.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsbCerrar});
-            this.TSPVehiculos.Location = new System.Drawing.Point(0, 0);
-            this.TSPVehiculos.Name = "TSPVehiculos";
-            this.TSPVehiculos.Size = new System.Drawing.Size(784, 52);
-            this.TSPVehiculos.TabIndex = 8;
-            this.TSPVehiculos.Text = "toolStrip1";
-            // 
-            // frmTiposVehiculos
+            // frmTarifas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(784, 361);
-            this.ControlBox = false;
+            this.ClientSize = new System.Drawing.Size(1008, 729);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.TSPVehiculos);
-            this.MaximumSize = new System.Drawing.Size(800, 400);
-            this.MinimumSize = new System.Drawing.Size(800, 400);
-            this.Name = "frmTiposVehiculos";
-            this.Text = "TIPOS DE VEHICULOS";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.Load += new System.EventHandler(this.frmVehiculos_Load);
+            this.MaximumSize = new System.Drawing.Size(1024, 768);
+            this.MinimumSize = new System.Drawing.Size(1024, 726);
+            this.Name = "frmTarifas";
+            this.Text = "frmAbonos";
+            this.Load += new System.EventHandler(this.frmTarifas_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.DatosDataGridView)).EndInit();
             this.TSPVehiculos.ResumeLayout(false);
@@ -126,8 +143,10 @@ namespace Parking.Windows
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.DataGridView DatosDataGridView;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colVehiculo;
-        private System.Windows.Forms.ToolStripButton tsbCerrar;
         private System.Windows.Forms.ToolStrip TSPVehiculos;
+        private System.Windows.Forms.ToolStripButton tsbCerrar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colVehiculo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colTiempo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colImporte;
     }
 }
