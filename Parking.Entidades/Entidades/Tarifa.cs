@@ -16,5 +16,7 @@ namespace Parking.Entidades.Entidades
 
         public TipoVehiculo TipoVehiculo { get; set; }
 
+        public Tiempo Tiempo { get; set; }
+
     }
 }

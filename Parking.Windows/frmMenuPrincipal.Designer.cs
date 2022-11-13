@@ -39,7 +39,7 @@ namespace Parking.Windows
             this.SalirButton = new System.Windows.Forms.Button();
             this.TarifasButton = new System.Windows.Forms.Button();
             this.ClientesButton = new System.Windows.Forms.Button();
-            this.VehiculoButton = new System.Windows.Forms.Button();
+            this.TiposVehiculosButton = new System.Windows.Forms.Button();
             this.TituloMenuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -93,7 +93,6 @@ namespace Parking.Windows
             // 
             // TituloToolStripMenuItem
             // 
-            this.TituloToolStripMenuItem.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
             this.TituloToolStripMenuItem.Font = new System.Drawing.Font("Perpetua Titling MT", 20F, System.Drawing.FontStyle.Bold);
             this.TituloToolStripMenuItem.Image = global::Parking.Windows.Properties.Resources.icons8_parking_60;
             this.TituloToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
@@ -105,11 +104,10 @@ namespace Parking.Windows
             // 
             this.SalirButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SalirButton.Image = global::Parking.Windows.Properties.Resources.Salir;
-            this.SalirButton.Location = new System.Drawing.Point(658, 278);
+            this.SalirButton.Location = new System.Drawing.Point(719, 0);
             this.SalirButton.Name = "SalirButton";
-            this.SalirButton.Size = new System.Drawing.Size(114, 71);
+            this.SalirButton.Size = new System.Drawing.Size(65, 72);
             this.SalirButton.TabIndex = 0;
-            this.SalirButton.Text = "SALIR";
             this.SalirButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.SalirButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.SalirButton.UseVisualStyleBackColor = true;
@@ -133,7 +131,7 @@ namespace Parking.Windows
             // 
             this.ClientesButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ClientesButton.Image = global::Parking.Windows.Properties.Resources.icons8_clients_40;
-            this.ClientesButton.Location = new System.Drawing.Point(658, 126);
+            this.ClientesButton.Location = new System.Drawing.Point(265, 126);
             this.ClientesButton.Name = "ClientesButton";
             this.ClientesButton.Size = new System.Drawing.Size(114, 71);
             this.ClientesButton.TabIndex = 0;
@@ -143,19 +141,19 @@ namespace Parking.Windows
             this.ClientesButton.UseVisualStyleBackColor = true;
             this.ClientesButton.Click += new System.EventHandler(this.ClientesButton_Click);
             // 
-            // VehiculoButton
+            // TiposVehiculosButton
             // 
-            this.VehiculoButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.VehiculoButton.Image = global::Parking.Windows.Properties.Resources.icons8_vehicles_40;
-            this.VehiculoButton.Location = new System.Drawing.Point(25, 126);
-            this.VehiculoButton.Name = "VehiculoButton";
-            this.VehiculoButton.Size = new System.Drawing.Size(114, 71);
-            this.VehiculoButton.TabIndex = 0;
-            this.VehiculoButton.Text = "VEHICULOS";
-            this.VehiculoButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.VehiculoButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
-            this.VehiculoButton.UseVisualStyleBackColor = true;
-            this.VehiculoButton.Click += new System.EventHandler(this.VehiculoButton_Click);
+            this.TiposVehiculosButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TiposVehiculosButton.Image = global::Parking.Windows.Properties.Resources.icons8_vehicles_40;
+            this.TiposVehiculosButton.Location = new System.Drawing.Point(25, 126);
+            this.TiposVehiculosButton.Name = "TiposVehiculosButton";
+            this.TiposVehiculosButton.Size = new System.Drawing.Size(114, 71);
+            this.TiposVehiculosButton.TabIndex = 0;
+            this.TiposVehiculosButton.Text = "VEHICULOS";
+            this.TiposVehiculosButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.TiposVehiculosButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.TiposVehiculosButton.UseVisualStyleBackColor = true;
+            this.TiposVehiculosButton.Click += new System.EventHandler(this.VehiculoButton_Click);
             // 
             // frmMenuPrincipal
             // 
@@ -167,7 +165,7 @@ namespace Parking.Windows
             this.Controls.Add(this.SalirButton);
             this.Controls.Add(this.TarifasButton);
             this.Controls.Add(this.ClientesButton);
-            this.Controls.Add(this.VehiculoButton);
+            this.Controls.Add(this.TiposVehiculosButton);
             this.Controls.Add(this.TituloMenuStrip);
             this.MainMenuStrip = this.TituloMenuStrip;
             this.MaximumSize = new System.Drawing.Size(800, 400);
@@ -184,7 +182,7 @@ namespace Parking.Windows
         }
 
         #endregion
-        private System.Windows.Forms.Button VehiculoButton;
+        private System.Windows.Forms.Button TiposVehiculosButton;
         private System.Windows.Forms.Button ClientesButton;
         private System.Windows.Forms.ToolStripPanel BottomToolStripPanel;
         private System.Windows.Forms.ToolStripPanel TopToolStripPanel;

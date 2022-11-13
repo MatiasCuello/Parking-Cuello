@@ -45,7 +45,7 @@ namespace Parking.Windows.Helpers
                 case Tarifa tarifa:
 
                     r.Cells[0].Value = tarifa.TipoVehiculo.Descripcion;
-                    r.Cells[1].Value = tarifa.TiempoId;
+                    r.Cells[1].Value = tarifa.Tiempo.Descripcion;
                     r.Cells[2].Value = tarifa.Importe;
 
                     break;

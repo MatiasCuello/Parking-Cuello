@@ -13,6 +13,7 @@ namespace Parking.Servicios.Servicios
     {
         private RepositorioTarifas repositorio;
         private RepositorioTiposVehiculos repoTiposVehiculos;
+        private RepositorioTiempos repoTiempos;
 
         public ServicioTarifas()
         {
@@ -23,15 +24,17 @@ namespace Parking.Servicios.Servicios
         {
             try
             {
-                List<Tarifa> lista=null;
+                List<Tarifa> lista;
                 using (var cn = ConexionBD.GetInstancia().AbrirConexion())
                 {
-                    repoTiposVehiculos = new RepositorioTiposVehiculos(cn);
                     repositorio = new RepositorioTarifas(cn);
+                    repoTiposVehiculos = new RepositorioTiposVehiculos(cn);
+                    repoTiempos = new RepositorioTiempos(cn);
                     lista = repositorio.GetLista();
                     foreach (var tarifa in lista)
                     {
                         tarifa.TipoVehiculo = repoTiposVehiculos.GetTipoVehiculoPorId(tarifa.TipoVehiculoId);
+                        tarifa.Tiempo = repoTiempos.GetTiempoPorId(tarifa.TiempoId);
                     }
                     return lista;
 

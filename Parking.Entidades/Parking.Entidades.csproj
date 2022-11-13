@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="Entidades\Cliente.cs" />
     <Compile Include="Entidades\Tarifa.cs" />
+    <Compile Include="Entidades\Tiempo.cs" />
     <Compile Include="Entidades\TipoVehiculo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

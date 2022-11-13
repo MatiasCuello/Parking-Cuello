@@ -46,6 +46,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositorios\RepositorioClientes.cs" />
     <Compile Include="Repositorios\RepositorioTarifas.cs" />
+    <Compile Include="Repositorios\RepositorioTiempos.cs" />
     <Compile Include="Repositorios\RepositorioTiposVehiculos.cs" />
   </ItemGroup>
   <ItemGroup>
