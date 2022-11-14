@@ -29,13 +29,13 @@ namespace Parking.Windows
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.DatosDataGridView = new System.Windows.Forms.DataGridView();
             this.colNombreCompleto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colDireccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colTelefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TSPVehiculos = new System.Windows.Forms.ToolStrip();
+            this.ControlesToolStrip = new System.Windows.Forms.ToolStrip();
             this.NuevoToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.EditarToolStripButton = new System.Windows.Forms.ToolStripButton();
@@ -44,7 +44,7 @@ namespace Parking.Windows
             this.tsbCerrar = new System.Windows.Forms.ToolStripButton();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DatosDataGridView)).BeginInit();
-            this.TSPVehiculos.SuspendLayout();
+            this.ControlesToolStrip.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -62,8 +62,8 @@ namespace Parking.Windows
             this.DatosDataGridView.AllowUserToDeleteRows = false;
             this.DatosDataGridView.AllowUserToResizeColumns = false;
             this.DatosDataGridView.AllowUserToResizeRows = false;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Silver;
-            this.DatosDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Silver;
+            this.DatosDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.DatosDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DatosDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colNombreCompleto,
@@ -100,21 +100,21 @@ namespace Parking.Windows
             this.colTelefono.Name = "colTelefono";
             this.colTelefono.ReadOnly = true;
             // 
-            // TSPVehiculos
+            // ControlesToolStrip
             // 
-            this.TSPVehiculos.BackColor = System.Drawing.Color.White;
-            this.TSPVehiculos.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ControlesToolStrip.BackColor = System.Drawing.Color.White;
+            this.ControlesToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.NuevoToolStripButton,
             this.toolStripSeparator2,
             this.EditarToolStripButton,
             this.toolStripSeparator1,
             this.BorrarToolStripButton,
             this.tsbCerrar});
-            this.TSPVehiculos.Location = new System.Drawing.Point(0, 0);
-            this.TSPVehiculos.Name = "TSPVehiculos";
-            this.TSPVehiculos.Size = new System.Drawing.Size(1008, 52);
-            this.TSPVehiculos.TabIndex = 10;
-            this.TSPVehiculos.Text = "toolStrip1";
+            this.ControlesToolStrip.Location = new System.Drawing.Point(0, 0);
+            this.ControlesToolStrip.Name = "ControlesToolStrip";
+            this.ControlesToolStrip.Size = new System.Drawing.Size(1008, 52);
+            this.ControlesToolStrip.TabIndex = 10;
+            this.ControlesToolStrip.Text = "toolStrip1";
             // 
             // NuevoToolStripButton
             // 
@@ -178,7 +178,7 @@ namespace Parking.Windows
             this.ClientSize = new System.Drawing.Size(1008, 729);
             this.ControlBox = false;
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.TSPVehiculos);
+            this.Controls.Add(this.ControlesToolStrip);
             this.Name = "frmClientes";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmClientes";
@@ -186,8 +186,8 @@ namespace Parking.Windows
             this.Load += new System.EventHandler(this.frmClientes_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.DatosDataGridView)).EndInit();
-            this.TSPVehiculos.ResumeLayout(false);
-            this.TSPVehiculos.PerformLayout();
+            this.ControlesToolStrip.ResumeLayout(false);
+            this.ControlesToolStrip.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -197,7 +197,7 @@ namespace Parking.Windows
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.DataGridView DatosDataGridView;
-        private System.Windows.Forms.ToolStrip TSPVehiculos;
+        private System.Windows.Forms.ToolStrip ControlesToolStrip;
         private System.Windows.Forms.ToolStripButton NuevoToolStripButton;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripButton EditarToolStripButton;

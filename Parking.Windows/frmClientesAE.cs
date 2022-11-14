@@ -96,6 +96,8 @@ namespace Parking.Windows
             this.cliente = cliente;
         }
 
+
+
         private void NombreCompletoLabel_Click(object sender, EventArgs e)
         {
 

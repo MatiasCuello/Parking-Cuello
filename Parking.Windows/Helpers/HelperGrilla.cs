@@ -48,6 +48,17 @@ namespace Parking.Windows.Helpers
                     r.Cells[2].Value = t.Importe;
 
                     break;
+                case Marca m:
+                    r.Cells[0].Value = m.Descripcion;
+
+                    break;
+                case Sector s:
+                    r.Cells[0].Value = s.Descripcion;
+                    r.Cells[1].Value = s.LugaresDisponibles;
+                    r.Cells[2].Value = s.LugaresDisponiblesMotos;
+
+
+                    break;
 
             }
 

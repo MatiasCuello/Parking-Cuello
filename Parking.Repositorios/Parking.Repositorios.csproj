@@ -45,6 +45,8 @@
     <Compile Include="ConexionBD.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositorios\RepositorioClientes.cs" />
+    <Compile Include="Repositorios\RepositorioMarcas.cs" />
+    <Compile Include="Repositorios\RepositorioSectores.cs" />
     <Compile Include="Repositorios\RepositorioTarifas.cs" />
     <Compile Include="Repositorios\RepositorioTiempos.cs" />
     <Compile Include="Repositorios\RepositorioTiposVehiculos.cs" />

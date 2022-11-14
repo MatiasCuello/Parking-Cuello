@@ -41,5 +41,20 @@ namespace Parking.Windows.Helpers
             combo.ValueMember = "TiempoId";
             combo.SelectedIndex = 0;
         }
+        public static void CargarDatosComboSectores(ref ComboBox combo)
+        {
+            ServicioSectores servicio = new ServicioSectores();
+            var lista = servicio.GetLista();
+            var defaultSector = new Sector()
+            {
+                SectorId = 0,
+                Descripcion = "<Seleccione Sector>"
+            };
+            lista.Insert(0, defaultSector);
+            combo.DataSource = lista;
+            combo.DisplayMember = "Descripcion";
+            combo.ValueMember = "SectorId";
+            combo.SelectedIndex = 0;
+        }
     }
 }

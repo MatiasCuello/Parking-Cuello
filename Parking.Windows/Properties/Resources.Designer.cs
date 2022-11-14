@@ -333,9 +333,29 @@ namespace Parking.Windows.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_parking_lot_40__1_ {
+            get {
+                object obj = ResourceManager.GetObject("icons8-parking-lot-40 (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_parking_lot_401 {
             get {
                 object obj = ResourceManager.GetObject("icons8-parking-lot-401", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_parking_lot_402 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-parking-lot-402", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -386,6 +406,36 @@ namespace Parking.Windows.Properties {
         internal static System.Drawing.Bitmap icons8_vehicles_401 {
             get {
                 object obj = ResourceManager.GetObject("icons8-vehicles-401", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_volkswagen_100 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-volkswagen-100", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_volkswagen_30 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-volkswagen-30", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_volkswagen_40 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-volkswagen-40", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

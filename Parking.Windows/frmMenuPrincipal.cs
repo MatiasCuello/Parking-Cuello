@@ -40,7 +40,7 @@ namespace Parking.Windows
 
         private void TarifasButton_Click(object sender, EventArgs e)
         {
-            frmTarifas frm = new frmTarifas() { Text = "Tabla Tarifaria" };
+            frmTarifas frm = new frmTarifas() { Text = "Tarifas" };
             frm.ShowDialog(this);
 
         }
@@ -55,7 +55,18 @@ namespace Parking.Windows
 
         }
 
+        private void MarcasButton_Click(object sender, EventArgs e)
+        {
+            frmMarcas frm = new frmMarcas() { Text = "Marcas" };
+            frm.ShowDialog(this);
 
+        }
+
+        private void SectoresButton_Click(object sender, EventArgs e)
+        {
+            frmSectores frm = new frmSectores() { Text = "Sectores" };
+            frm.ShowDialog(this);
+        }
     }
 
 }

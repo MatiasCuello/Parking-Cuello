@@ -1,7 +1,7 @@
 ﻿
 namespace Parking.Windows
 {
-    partial class frmTiposVehiculos
+    partial class frmMarcas
     {
         /// <summary>
         /// Required designer variable.
@@ -32,8 +32,13 @@ namespace Parking.Windows
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.DatosDataGridView = new System.Windows.Forms.DataGridView();
-            this.colVehiculo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colMarca = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ControlesToolStrip = new System.Windows.Forms.ToolStrip();
+            this.NuevoToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.EditarToolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.BorrarToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.tsbCerrar = new System.Windows.Forms.ToolStripButton();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DatosDataGridView)).BeginInit();
@@ -46,8 +51,8 @@ namespace Parking.Windows
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 52);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1008, 677);
-            this.panel1.TabIndex = 9;
+            this.panel1.Size = new System.Drawing.Size(800, 398);
+            this.panel1.TabIndex = 13;
             // 
             // DatosDataGridView
             // 
@@ -59,7 +64,7 @@ namespace Parking.Windows
             this.DatosDataGridView.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.DatosDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DatosDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.colVehiculo});
+            this.colMarca});
             this.DatosDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DatosDataGridView.Location = new System.Drawing.Point(0, 0);
             this.DatosDataGridView.MultiSelect = false;
@@ -67,25 +72,74 @@ namespace Parking.Windows
             this.DatosDataGridView.ReadOnly = true;
             this.DatosDataGridView.RowHeadersVisible = false;
             this.DatosDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DatosDataGridView.Size = new System.Drawing.Size(1008, 677);
+            this.DatosDataGridView.Size = new System.Drawing.Size(800, 398);
             this.DatosDataGridView.TabIndex = 0;
             // 
-            // colVehiculo
+            // colMarca
             // 
-            this.colVehiculo.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colVehiculo.HeaderText = "Vehiculo";
-            this.colVehiculo.Name = "colVehiculo";
-            this.colVehiculo.ReadOnly = true;
+            this.colMarca.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colMarca.HeaderText = "Marcas";
+            this.colMarca.Name = "colMarca";
+            this.colMarca.ReadOnly = true;
             // 
             // ControlesToolStrip
             // 
+            this.ControlesToolStrip.BackColor = System.Drawing.Color.White;
             this.ControlesToolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.NuevoToolStripButton,
+            this.toolStripSeparator2,
+            this.EditarToolStripButton,
+            this.toolStripSeparator1,
+            this.BorrarToolStripButton,
             this.tsbCerrar});
             this.ControlesToolStrip.Location = new System.Drawing.Point(0, 0);
             this.ControlesToolStrip.Name = "ControlesToolStrip";
-            this.ControlesToolStrip.Size = new System.Drawing.Size(1008, 52);
-            this.ControlesToolStrip.TabIndex = 8;
+            this.ControlesToolStrip.Size = new System.Drawing.Size(800, 52);
+            this.ControlesToolStrip.TabIndex = 12;
             this.ControlesToolStrip.Text = "toolStrip1";
+            // 
+            // NuevoToolStripButton
+            // 
+            this.NuevoToolStripButton.Image = global::Parking.Windows.Properties.Resources.Plus_30px;
+            this.NuevoToolStripButton.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.NuevoToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.NuevoToolStripButton.Name = "NuevoToolStripButton";
+            this.NuevoToolStripButton.Size = new System.Drawing.Size(46, 49);
+            this.NuevoToolStripButton.Text = "Nuevo";
+            this.NuevoToolStripButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.NuevoToolStripButton.Click += new System.EventHandler(this.NuevoToolStripButton_Click);
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 52);
+            // 
+            // EditarToolStripButton
+            // 
+            this.EditarToolStripButton.Image = global::Parking.Windows.Properties.Resources.pencil_50px;
+            this.EditarToolStripButton.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.EditarToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.EditarToolStripButton.Name = "EditarToolStripButton";
+            this.EditarToolStripButton.Size = new System.Drawing.Size(41, 49);
+            this.EditarToolStripButton.Text = "Editar";
+            this.EditarToolStripButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.EditarToolStripButton.Click += new System.EventHandler(this.EditarToolStripButton_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 52);
+            // 
+            // BorrarToolStripButton
+            // 
+            this.BorrarToolStripButton.Image = global::Parking.Windows.Properties.Resources.waste_50px;
+            this.BorrarToolStripButton.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.BorrarToolStripButton.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.BorrarToolStripButton.Name = "BorrarToolStripButton";
+            this.BorrarToolStripButton.Size = new System.Drawing.Size(43, 49);
+            this.BorrarToolStripButton.Text = "Borrar";
+            this.BorrarToolStripButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.BorrarToolStripButton.Click += new System.EventHandler(this.BorrarToolStripButton_Click);
             // 
             // tsbCerrar
             // 
@@ -99,19 +153,17 @@ namespace Parking.Windows
             this.tsbCerrar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.tsbCerrar.Click += new System.EventHandler(this.tsbCerrar_Click);
             // 
-            // frmTiposVehiculos
+            // frmMarcas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1008, 729);
+            this.ClientSize = new System.Drawing.Size(800, 450);
             this.ControlBox = false;
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.ControlesToolStrip);
-            this.Name = "frmTiposVehiculos";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "TIPOS DE VEHICULOS";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.Load += new System.EventHandler(this.frmVehiculos_Load);
+            this.Name = "frmMarcas";
+            this.Text = "frmMarcas";
+            this.Load += new System.EventHandler(this.frmMarcas_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.DatosDataGridView)).EndInit();
             this.ControlesToolStrip.ResumeLayout(false);
@@ -125,8 +177,13 @@ namespace Parking.Windows
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.DataGridView DatosDataGridView;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colVehiculo;
-        private System.Windows.Forms.ToolStripButton tsbCerrar;
         private System.Windows.Forms.ToolStrip ControlesToolStrip;
+        private System.Windows.Forms.ToolStripButton NuevoToolStripButton;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
+        private System.Windows.Forms.ToolStripButton EditarToolStripButton;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripButton BorrarToolStripButton;
+        private System.Windows.Forms.ToolStripButton tsbCerrar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colMarca;
     }
 }

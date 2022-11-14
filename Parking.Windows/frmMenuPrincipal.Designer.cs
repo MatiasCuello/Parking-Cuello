@@ -35,11 +35,13 @@ namespace Parking.Windows
             this.LeftToolStripPanel = new System.Windows.Forms.ToolStripPanel();
             this.ContentPanel = new System.Windows.Forms.ToolStripContentPanel();
             this.TituloMenuStrip = new System.Windows.Forms.MenuStrip();
-            this.TituloToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.SalirButton = new System.Windows.Forms.Button();
             this.TarifasButton = new System.Windows.Forms.Button();
+            this.SectoresButton = new System.Windows.Forms.Button();
+            this.MarcasButton = new System.Windows.Forms.Button();
             this.ClientesButton = new System.Windows.Forms.Button();
             this.TiposVehiculosButton = new System.Windows.Forms.Button();
+            this.TituloToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.TituloMenuStrip.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -91,15 +93,6 @@ namespace Parking.Windows
             this.TituloMenuStrip.Size = new System.Drawing.Size(784, 72);
             this.TituloMenuStrip.TabIndex = 3;
             // 
-            // TituloToolStripMenuItem
-            // 
-            this.TituloToolStripMenuItem.Font = new System.Drawing.Font("Perpetua Titling MT", 20F, System.Drawing.FontStyle.Bold);
-            this.TituloToolStripMenuItem.Image = global::Parking.Windows.Properties.Resources.icons8_parking_60;
-            this.TituloToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.TituloToolStripMenuItem.Name = "TituloToolStripMenuItem";
-            this.TituloToolStripMenuItem.Size = new System.Drawing.Size(361, 68);
-            this.TituloToolStripMenuItem.Text = "PARKING - CUELLO";
-            // 
             // SalirButton
             // 
             this.SalirButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -127,6 +120,35 @@ namespace Parking.Windows
             this.TarifasButton.UseVisualStyleBackColor = true;
             this.TarifasButton.Click += new System.EventHandler(this.TarifasButton_Click);
             // 
+            // SectoresButton
+            // 
+            this.SectoresButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SectoresButton.Image = global::Parking.Windows.Properties.Resources.icons8_parking_lot_40__1_;
+            this.SectoresButton.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.SectoresButton.Location = new System.Drawing.Point(505, 126);
+            this.SectoresButton.Name = "SectoresButton";
+            this.SectoresButton.Size = new System.Drawing.Size(114, 71);
+            this.SectoresButton.TabIndex = 0;
+            this.SectoresButton.Text = "SECTORES";
+            this.SectoresButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.SectoresButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.SectoresButton.UseVisualStyleBackColor = true;
+            this.SectoresButton.Click += new System.EventHandler(this.SectoresButton_Click);
+            // 
+            // MarcasButton
+            // 
+            this.MarcasButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MarcasButton.Image = global::Parking.Windows.Properties.Resources.icons8_volkswagen_40;
+            this.MarcasButton.Location = new System.Drawing.Point(385, 126);
+            this.MarcasButton.Name = "MarcasButton";
+            this.MarcasButton.Size = new System.Drawing.Size(114, 71);
+            this.MarcasButton.TabIndex = 0;
+            this.MarcasButton.Text = "MARCAS";
+            this.MarcasButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.MarcasButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.MarcasButton.UseVisualStyleBackColor = true;
+            this.MarcasButton.Click += new System.EventHandler(this.MarcasButton_Click);
+            // 
             // ClientesButton
             // 
             this.ClientesButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -149,11 +171,20 @@ namespace Parking.Windows
             this.TiposVehiculosButton.Name = "TiposVehiculosButton";
             this.TiposVehiculosButton.Size = new System.Drawing.Size(114, 71);
             this.TiposVehiculosButton.TabIndex = 0;
-            this.TiposVehiculosButton.Text = "VEHICULOS";
+            this.TiposVehiculosButton.Text = "TIPOS VEHIC.";
             this.TiposVehiculosButton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.TiposVehiculosButton.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.TiposVehiculosButton.UseVisualStyleBackColor = true;
             this.TiposVehiculosButton.Click += new System.EventHandler(this.VehiculoButton_Click);
+            // 
+            // TituloToolStripMenuItem
+            // 
+            this.TituloToolStripMenuItem.Font = new System.Drawing.Font("Perpetua Titling MT", 20F, System.Drawing.FontStyle.Bold);
+            this.TituloToolStripMenuItem.Image = global::Parking.Windows.Properties.Resources.icons8_parking_60;
+            this.TituloToolStripMenuItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.TituloToolStripMenuItem.Name = "TituloToolStripMenuItem";
+            this.TituloToolStripMenuItem.Size = new System.Drawing.Size(361, 68);
+            this.TituloToolStripMenuItem.Text = "PARKING - CUELLO";
             // 
             // frmMenuPrincipal
             // 
@@ -164,6 +195,8 @@ namespace Parking.Windows
             this.ControlBox = false;
             this.Controls.Add(this.SalirButton);
             this.Controls.Add(this.TarifasButton);
+            this.Controls.Add(this.SectoresButton);
+            this.Controls.Add(this.MarcasButton);
             this.Controls.Add(this.ClientesButton);
             this.Controls.Add(this.TiposVehiculosButton);
             this.Controls.Add(this.TituloMenuStrip);
@@ -193,6 +226,8 @@ namespace Parking.Windows
         private System.Windows.Forms.ToolStripMenuItem TituloToolStripMenuItem;
         private System.Windows.Forms.Button SalirButton;
         private System.Windows.Forms.Button TarifasButton;
+        private System.Windows.Forms.Button MarcasButton;
+        private System.Windows.Forms.Button SectoresButton;
     }
 }
 
