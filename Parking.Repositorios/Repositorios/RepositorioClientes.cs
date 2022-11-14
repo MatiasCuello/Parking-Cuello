@@ -60,9 +60,11 @@ namespace Parking.Repositorios.Repositorios
 
             try
             {
-                var cadenaComando = "SELECT ClienteId, NombreCompleto FROM Clientes WHERE NombreCompleto=@nom";
+                var cadenaComando = "SELECT ClienteId, NombreCompleto FROM Clientes WHERE NombreCompleto=@nom AND Direccion=@dir AND Telefono=@tel";
                 var comando = new SqlCommand(cadenaComando, conexion);
                 comando.Parameters.AddWithValue("@nom", cliente.NombreCompleto);
+                comando.Parameters.AddWithValue("@dir", cliente.Direccion);
+                comando.Parameters.AddWithValue("@tel", cliente.Telefono);
                 var reader = comando.ExecuteReader();
                 return reader.HasRows;
             }

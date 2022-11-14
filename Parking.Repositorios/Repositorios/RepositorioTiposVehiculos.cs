@@ -68,7 +68,7 @@ namespace Parking.Repositorios.Repositorios
                         if (reader.HasRows)
                         {
                             reader.Read();
-                        tipovehiculo = ConstruirTipoVehiculo(reader);
+                            tipovehiculo = ConstruirTipoVehiculo(reader);
                         }
                     }
                 return tipovehiculo;

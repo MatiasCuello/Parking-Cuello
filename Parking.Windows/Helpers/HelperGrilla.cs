@@ -42,11 +42,10 @@ namespace Parking.Windows.Helpers
                     r.Cells[2].Value = c.Telefono;
 
                     break;
-                case Tarifa tarifa:
-
-                    r.Cells[0].Value = tarifa.TipoVehiculo.Descripcion;
-                    r.Cells[1].Value = tarifa.Tiempo.Descripcion;
-                    r.Cells[2].Value = tarifa.Importe;
+                case Tarifa t:
+                    r.Cells[0].Value = t.TipoVehiculo.Descripcion;
+                    r.Cells[1].Value = t.Tiempo.Descripcion;
+                    r.Cells[2].Value = t.Importe;
 
                     break;
 

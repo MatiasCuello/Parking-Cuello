@@ -18,7 +18,7 @@ namespace Parking.Windows.Helpers
             var defaultTipoV = new TipoVehiculo()
             {
                 TipoVehiculoId = 0,
-                Descripcion = "Seleccione Tipo de Vehiculo"
+                Descripcion = "<Seleccione Tipo de Vehiculo>"
             };
             lista.Insert(0, defaultTipoV);
             combo.DataSource = lista;
@@ -26,6 +26,20 @@ namespace Parking.Windows.Helpers
             combo.ValueMember = "TipoVehiculoId";
             combo.SelectedIndex = 0;
         }
-
+        public static void CargarDatosComboTiempos(ref ComboBox combo)
+        {
+            ServicioTiempos servicio = new ServicioTiempos();
+            var lista = servicio.GetLista();
+            var defaultTiempo = new Tiempo()
+            {
+                TiempoId = 0,
+                Descripcion = "<Seleccione Tiempo>"
+            };
+            lista.Insert(0, defaultTiempo);
+            combo.DataSource = lista;
+            combo.DisplayMember = "Descripcion";
+            combo.ValueMember = "TiempoId";
+            combo.SelectedIndex = 0;
+        }
     }
 }

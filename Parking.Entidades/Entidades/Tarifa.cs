@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Parking.Entidades.Entidades
 {
-    public class Tarifa
+    public class Tarifa:ICloneable
     {
         public int TarifaId { get; set; }
         public int TipoVehiculoId { get; set; }
@@ -15,8 +15,11 @@ namespace Parking.Entidades.Entidades
         public byte[] RowVersion { get; set; }
 
         public TipoVehiculo TipoVehiculo { get; set; }
-
         public Tiempo Tiempo { get; set; }
 
+        public object Clone()
+        {
+            return MemberwiseClone();
+        }
     }
 }

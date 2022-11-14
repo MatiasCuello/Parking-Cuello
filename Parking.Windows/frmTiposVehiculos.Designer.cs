@@ -46,7 +46,7 @@ namespace Parking.Windows
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 52);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(784, 309);
+            this.panel1.Size = new System.Drawing.Size(1008, 677);
             this.panel1.TabIndex = 9;
             // 
             // DatosDataGridView
@@ -67,7 +67,7 @@ namespace Parking.Windows
             this.DatosDataGridView.ReadOnly = true;
             this.DatosDataGridView.RowHeadersVisible = false;
             this.DatosDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DatosDataGridView.Size = new System.Drawing.Size(784, 309);
+            this.DatosDataGridView.Size = new System.Drawing.Size(1008, 677);
             this.DatosDataGridView.TabIndex = 0;
             // 
             // colVehiculo
@@ -95,7 +95,7 @@ namespace Parking.Windows
             this.tsbCerrar});
             this.TSPVehiculos.Location = new System.Drawing.Point(0, 0);
             this.TSPVehiculos.Name = "TSPVehiculos";
-            this.TSPVehiculos.Size = new System.Drawing.Size(784, 52);
+            this.TSPVehiculos.Size = new System.Drawing.Size(1008, 52);
             this.TSPVehiculos.TabIndex = 8;
             this.TSPVehiculos.Text = "toolStrip1";
             // 
@@ -103,13 +103,12 @@ namespace Parking.Windows
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(784, 361);
+            this.ClientSize = new System.Drawing.Size(1008, 729);
             this.ControlBox = false;
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.TSPVehiculos);
-            this.MaximumSize = new System.Drawing.Size(800, 400);
-            this.MinimumSize = new System.Drawing.Size(800, 400);
             this.Name = "frmTiposVehiculos";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TIPOS DE VEHICULOS";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmVehiculos_Load);

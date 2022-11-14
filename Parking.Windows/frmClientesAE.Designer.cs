@@ -234,6 +234,8 @@ namespace Parking.Windows
             this.Controls.Add(this.CancelButton);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
+            this.MaximumSize = new System.Drawing.Size(800, 300);
+            this.MinimumSize = new System.Drawing.Size(800, 300);
             this.Name = "frmClientesAE";
             this.Text = "frmClientesAE";
             this.Load += new System.EventHandler(this.frmClientesAE_Load);

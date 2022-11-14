@@ -29,17 +29,7 @@ namespace Parking.Windows
         private void frmClientes_Load(object sender, EventArgs e)
         {
 
-            try
-            {
-                servicio = new ServicioClientes();
-                lista = servicio.GetLista();
-                HelperForm.MostrarDatosEnGrilla(DatosDataGridView, lista);
-            }
-            catch (Exception ex)
-            {
-
-                throw new Exception(ex.Message);
-            }
+            ActualizarGrilla();
         }
 
         private void ActualizarGrilla()

@@ -88,9 +88,6 @@ namespace Parking.Windows
                 errorProvider1.SetError(TelefonoTextBox, "El Telefono del cliente es requerido");
             }
 
-
-
-
             return valido;
         }
 

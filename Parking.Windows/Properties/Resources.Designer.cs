@@ -243,6 +243,26 @@ namespace Parking.Windows.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_clock_30 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-clock-30", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_dollar_coin_30 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-dollar-coin-30", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_parking_40 {
             get {
                 object obj = ResourceManager.GetObject("icons8-parking-40", resourceCulture);
@@ -343,6 +363,16 @@ namespace Parking.Windows.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_tariff_100 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-tariff-100", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_vehicles_40 {
             get {
                 object obj = ResourceManager.GetObject("icons8-vehicles-40", resourceCulture);
@@ -436,6 +466,26 @@ namespace Parking.Windows.Properties {
         internal static System.Drawing.Bitmap Plus_30px1 {
             get {
                 object obj = ResourceManager.GetObject("Plus_30px1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap restart_30px {
+            get {
+                object obj = ResourceManager.GetObject("restart_30px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap restart_50px {
+            get {
+                object obj = ResourceManager.GetObject("restart_50px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
