@@ -71,23 +71,23 @@
     <Compile Include="frmMarcasAE.Designer.cs">
       <DependentUpon>frmMarcasAE.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmRetiro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRetiro.Designer.cs">
+      <DependentUpon>frmRetiro.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmSectores.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmSectores.Designer.cs">
       <DependentUpon>frmSectores.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmSeleccionarTarifa.cs">
+    <Compile Include="DetalleVehiculo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmSeleccionarTarifa.Designer.cs">
-      <DependentUpon>frmSeleccionarTarifa.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmSeleccionarUbicacion.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmSeleccionarUbicacion.Designer.cs">
-      <DependentUpon>frmSeleccionarUbicacion.cs</DependentUpon>
+    <Compile Include="DetalleVehiculo.Designer.cs">
+      <DependentUpon>DetalleVehiculo.cs</DependentUpon>
     </Compile>
     <Compile Include="frmTarifas.cs">
       <SubType>Form</SubType>
@@ -162,14 +162,14 @@
     <EmbeddedResource Include="frmMenuPrincipal.resx">
       <DependentUpon>frmMenuPrincipal.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmRetiro.resx">
+      <DependentUpon>frmRetiro.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmSectores.resx">
       <DependentUpon>frmSectores.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmSeleccionarTarifa.resx">
-      <DependentUpon>frmSeleccionarTarifa.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmSeleccionarUbicacion.resx">
-      <DependentUpon>frmSeleccionarUbicacion.cs</DependentUpon>
+    <EmbeddedResource Include="DetalleVehiculo.resx">
+      <DependentUpon>DetalleVehiculo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmTarifas.resx">
       <DependentUpon>frmTarifas.cs</DependentUpon>

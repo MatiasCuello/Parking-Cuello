@@ -25,7 +25,10 @@ namespace Parking.Windows
         {
             Close();
         }
-
+        private void frmVehiculos_Load(object sender, EventArgs e)
+        {
+            RecargarGrilla();
+        }
         private void NuevoToolStripButton_Click(object sender, EventArgs e)
         {
 
@@ -41,7 +44,7 @@ namespace Parking.Windows
                 if (!servicio.Existe(vehiculo))
                 {
                     int registrosAfectados = servicio.Agregar(vehiculo);
-                    //RecargarGrilla();
+                    RecargarGrilla();
                     if (registrosAfectados == 0)
                     {
                         HelperMensaje.Mensaje(TipoMensaje.WARNING, "No se agregaron registros", "Advertencia");
@@ -74,9 +77,8 @@ namespace Parking.Windows
             }
         }
 
-        private void frmVehiculos_Load(object sender, EventArgs e)
+        private void RecargarGrilla()
         {
-
             try
             {
                 servicio = new ServicioVehiculos();
@@ -89,19 +91,53 @@ namespace Parking.Windows
                 throw new Exception(ex.Message);
             }
         }
-        Vehiculo vehiculo;
-        private void DatosDataGridView_RowHeaderMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+
+
+        private void BorrarToolStripButton_Click(object sender, EventArgs e)
         {
-            var r = DatosDataGridView.SelectedRows[0];
-            vehiculo = r.Tag as Vehiculo;
-            if (vehiculo.Estacionado == true)
-            {
-                TarifaToolStripButton.Enabled = true;
-            }
-            else
-            {
-                TarifaToolStripButton.Enabled = false;
-            }
+            //if (DatosDataGridView.SelectedRows.Count == 0)
+            //{
+            //    return;
+            //}
+
+            //var r = DatosDataGridView.SelectedRows[0];
+            //Vehiculo vehiculo = (Vehiculo)r.Tag;
+            //DialogResult dr = HelperMensaje.Mensaje("¿Desea borrar el vehiculo?",
+            //    "Confirmar eliminacion");
+            //if (dr == DialogResult.No)
+            //{
+            //    return;
+            //}
+            //try
+            //{
+            //    if (servicio.EstaRelacionado(vehiculo))
+            //    {
+            //        HelperMensaje.Mensaje(TipoMensaje.ERROR, "Vehiculo relacionado!!", "ERROR");
+            //    }
+            //    else
+            //    {
+            //        int registros = servicio.Editar(vehiculo);
+            //        if (registros == 0)
+            //        {
+            //            HelperMensaje.Mensaje(TipoMensaje.WARNING, "No se modifico el ", "Advertencia");
+            //        }
+            //        else
+            //        {
+            //            HelperGrilla.BorrarFila(DatosDataGridView, r);
+
+            //            HelperMensaje.Mensaje(TipoMensaje.OK, "tarifa borrado", "Mensaje");
+            //        }
+            //    }
+            //}
+            //catch (Exception exception)
+            //{
+            //    HelperMensaje.Mensaje(TipoMensaje.ERROR, exception.Message, "Error");
+            //}
+        }
+
+        private void RetiroToolStripButton_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

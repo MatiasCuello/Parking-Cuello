@@ -13,9 +13,9 @@ using System.Windows.Forms;
 
 namespace Parking.Windows
 {
-    public partial class frmSeleccionarTarifa : Form
+    public partial class DetalleVehiculo : Form
     {
-        public frmSeleccionarTarifa()
+        public DetalleVehiculo()
         {
             InitializeComponent();
         }
