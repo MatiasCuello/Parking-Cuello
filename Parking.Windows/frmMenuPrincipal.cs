@@ -67,6 +67,23 @@ namespace Parking.Windows
             frmSectores frm = new frmSectores() { Text = "Sectores" };
             frm.ShowDialog(this);
         }
+
+        private void RegistradosButton_Click(object sender, EventArgs e)
+        {
+            frmVehiculosRegistrados frm = new frmVehiculosRegistrados() { Text = "Vehiculos Registrados" };
+            frm.ShowDialog(this);
+        }
+
+        private void MENU_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void LugaresButton_Click(object sender, EventArgs e)
+        {
+            frmLugares frm = new frmLugares() { Text = "Lugares" };
+            frm.ShowDialog(this);
+        }
     }
 
 }

@@ -24,7 +24,7 @@ namespace Parking.Repositorios.Repositorios
             {
 
                 string cadenaComando =
-                    "SELECT SectorId, Descripcion, LugaresDisponibles, LugaresDisponiblesMotos, RowVersion FROM Sectores";
+                    "SELECT SectorId, Descripcion, LugaresDisponibles, RowVersion FROM Sectores";
                 SqlCommand comando = new SqlCommand(cadenaComando, conexion);
                 SqlDataReader reader = comando.ExecuteReader();
                 while (reader.Read())
@@ -51,8 +51,7 @@ namespace Parking.Repositorios.Repositorios
                 SectorId = reader.GetInt32(0),
                 Descripcion = reader.GetString(1),
                 LugaresDisponibles = reader.GetInt32(2),
-                LugaresDisponiblesMotos = reader.GetInt32(3),
-                RowVersion = (byte[])reader[4]
+                RowVersion = (byte[])reader[3]
             };
 
 
@@ -64,7 +63,8 @@ namespace Parking.Repositorios.Repositorios
             Sector sector = null;
             try
             {
-                var cadenaComando = "SELECT SectorId, Descripcion,LugaresDisponibles,LugaresDisponiblesMotos FROM Sectores WHERE SectorId=@id";
+                var cadenaComando = 
+                    "SELECT SectorId, Descripcion, LugaresDisponibles, RowVersion FROM Sectores WHERE SectorId=@id";
                 var comando = new SqlCommand(cadenaComando, conexion);
                 comando.Parameters.AddWithValue("@id", id);
                 using (var reader = comando.ExecuteReader())

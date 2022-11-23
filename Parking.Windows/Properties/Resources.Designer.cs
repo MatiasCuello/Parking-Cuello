@@ -223,6 +223,36 @@ namespace Parking.Windows.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap garage_100pxp3 {
+            get {
+                object obj = ResourceManager.GetObject("garage_100pxp3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_car_badge_100 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-car-badge-100", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_car_badge_40 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-car-badge-40", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_clients_40 {
             get {
                 object obj = ResourceManager.GetObject("icons8-clients-40", resourceCulture);
@@ -253,9 +283,29 @@ namespace Parking.Windows.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_clock_301 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-clock-301", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_dollar_coin_30 {
             get {
                 object obj = ResourceManager.GetObject("icons8-dollar-coin-30", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_licence_plate_30 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-licence-plate-30", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -303,6 +353,26 @@ namespace Parking.Windows.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_parking_and_1st_floor_40 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-parking-and-1st-floor-40", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_parking_and_1st_floor_50 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-parking-and-1st-floor-50", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_parking_lot_100 {
             get {
                 object obj = ResourceManager.GetObject("icons8-parking-lot-100", resourceCulture);
@@ -343,6 +413,16 @@ namespace Parking.Windows.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_parking_lot_40__1_1 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-parking-lot-40 (1)1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_parking_lot_401 {
             get {
                 object obj = ResourceManager.GetObject("icons8-parking-lot-401", resourceCulture);
@@ -363,6 +443,16 @@ namespace Parking.Windows.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_parking_lot_50 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-parking-lot-50", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_parking_lot_60 {
             get {
                 object obj = ResourceManager.GetObject("icons8-parking-lot-60", resourceCulture);
@@ -376,6 +466,26 @@ namespace Parking.Windows.Properties {
         internal static System.Drawing.Bitmap icons8_parking_lot_601 {
             get {
                 object obj = ResourceManager.GetObject("icons8-parking-lot-601", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_schedule_30 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-schedule-30", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_sedan_30 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-sedan-30", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -413,6 +523,26 @@ namespace Parking.Windows.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_vehicles_402 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-vehicles-402", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_vehicles_50 {
+            get {
+                object obj = ResourceManager.GetObject("icons8-vehicles-50", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_volkswagen_100 {
             get {
                 object obj = ResourceManager.GetObject("icons8-volkswagen-100", resourceCulture);
@@ -436,6 +566,16 @@ namespace Parking.Windows.Properties {
         internal static System.Drawing.Bitmap icons8_volkswagen_40 {
             get {
                 object obj = ResourceManager.GetObject("icons8-volkswagen-40", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap nissan_gtr_emblem_30px {
+            get {
+                object obj = ResourceManager.GetObject("nissan_gtr_emblem_30px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -483,6 +623,56 @@ namespace Parking.Windows.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap open_garage_door_30px {
+            get {
+                object obj = ResourceManager.GetObject("open_garage_door_30px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap open_garage_door_30px1 {
+            get {
+                object obj = ResourceManager.GetObject("open_garage_door_30px1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap parking_and_4th_floor_30px {
+            get {
+                object obj = ResourceManager.GetObject("parking_and_4th_floor_30px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap payment_history_40px {
+            get {
+                object obj = ResourceManager.GetObject("payment_history_40px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap payment50px {
+            get {
+                object obj = ResourceManager.GetObject("payment50px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap pencil_50px {
             get {
                 object obj = ResourceManager.GetObject("pencil_50px", resourceCulture);
@@ -503,6 +693,16 @@ namespace Parking.Windows.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap place_marker_30px {
+            get {
+                object obj = ResourceManager.GetObject("place_marker_30px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Plus_30px {
             get {
                 object obj = ResourceManager.GetObject("Plus_30px", resourceCulture);
@@ -516,6 +716,16 @@ namespace Parking.Windows.Properties {
         internal static System.Drawing.Bitmap Plus_30px1 {
             get {
                 object obj = ResourceManager.GetObject("Plus_30px1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap purchase_order_30px {
+            get {
+                object obj = ResourceManager.GetObject("purchase_order_30px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -556,6 +766,26 @@ namespace Parking.Windows.Properties {
         internal static System.Drawing.Bitmap Salir1 {
             get {
                 object obj = ResourceManager.GetObject("Salir1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap sector {
+            get {
+                object obj = ResourceManager.GetObject("sector", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap sell_property_100px {
+            get {
+                object obj = ResourceManager.GetObject("sell_property_100px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -42,12 +42,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Entidades\Cliente.cs" />
+    <Compile Include="Entidades\DetalleVehiculo.cs" />
+    <Compile Include="Entidades\Lugar.cs" />
     <Compile Include="Entidades\Marca.cs" />
     <Compile Include="Entidades\Sector.cs" />
     <Compile Include="Entidades\Tarifa.cs" />
     <Compile Include="Entidades\Tiempo.cs" />
     <Compile Include="Entidades\TipoVehiculo.cs" />
-    <Compile Include="Entidades\VehiculoRegistrado.cs" />
+    <Compile Include="Entidades\Vehiculo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />

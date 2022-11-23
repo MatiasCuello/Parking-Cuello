@@ -27,8 +27,8 @@ namespace Parking.Repositorios.Repositorios
                 SqlDataReader reader = comando.ExecuteReader();
                 while (reader.Read())
                 {
-                    var categoria = ConstruirCliente(reader);
-                    lista.Add(categoria);
+                    var cliente = ConstruirCliente(reader);
+                    lista.Add(cliente);
                 }
                 reader.Close();
 
@@ -54,6 +54,33 @@ namespace Parking.Repositorios.Repositorios
 
 
         }
+
+        public Cliente GetClientePorId(int clienteId)
+        {
+            Cliente cliente = null;
+            try
+            {
+                var cadenaComando = "SELECT ClienteId, NombreCompleto, Direccion, Telefono FROM Clientes WHERE ClienteId=@id";
+                var comando = new SqlCommand(cadenaComando, conexion);
+                comando.Parameters.AddWithValue("@id", clienteId);
+                using (var reader = comando.ExecuteReader())
+                {
+                    if (reader.HasRows)
+                    {
+                        reader.Read();
+                        cliente = ConstruirCliente(reader);
+                    }
+                }
+                return cliente;
+
+            }
+            catch (Exception e)
+            {
+
+                throw new Exception(e.Message);
+            }
+        }
+    
 
         public bool Existe(Cliente cliente)
         {

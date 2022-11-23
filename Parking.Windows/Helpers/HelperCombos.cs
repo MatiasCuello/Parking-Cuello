@@ -56,5 +56,35 @@ namespace Parking.Windows.Helpers
             combo.ValueMember = "SectorId";
             combo.SelectedIndex = 0;
         }
+        public static void CargarDatosComboLugares(ref ComboBox combo, Sector sector)
+        {
+            ServicioLugares servicio = new ServicioLugares();
+            var lista = servicio.GetLista(sector);
+            var defaultLugar = new Lugar()
+            {
+                LugarId = 0,
+                Descripcion = "<Seleccione Lugar>"
+            };
+            lista.Insert(0, defaultLugar);
+            combo.DataSource = lista;
+            combo.DisplayMember = "Descripcion";
+            combo.ValueMember = "LugarId";
+            combo.SelectedIndex = 0;
+        }
+        public static void CargarDatosComboTarifas(ref ComboBox combo)
+        {
+            ServicioTarifas servicio = new ServicioTarifas();
+            var lista = servicio.GetLista();
+            var defaultTarifa = new Tarifa()
+            {
+                TarifaId = 0,
+                Descripcion = "<Seleccione Tarifa>"
+            };
+            lista.Insert(0, defaultTarifa);
+            combo.DataSource = lista;
+            combo.DisplayMember = "Descripcion";
+            combo.ValueMember = "TarifaId";
+            combo.SelectedIndex = 0;
+        }
     }
 }

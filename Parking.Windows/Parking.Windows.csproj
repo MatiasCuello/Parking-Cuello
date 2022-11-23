@@ -53,6 +53,12 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmLugares.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLugares.Designer.cs">
+      <DependentUpon>frmLugares.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmMarcas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -70,6 +76,18 @@
     </Compile>
     <Compile Include="frmSectores.Designer.cs">
       <DependentUpon>frmSectores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSeleccionarTarifa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSeleccionarTarifa.Designer.cs">
+      <DependentUpon>frmSeleccionarTarifa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmSeleccionarUbicacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSeleccionarUbicacion.Designer.cs">
+      <DependentUpon>frmSeleccionarUbicacion.cs</DependentUpon>
     </Compile>
     <Compile Include="frmTarifas.cs">
       <SubType>Form</SubType>
@@ -107,6 +125,18 @@
     <Compile Include="frmTiposVehiculos.Designer.cs">
       <DependentUpon>frmTiposVehiculos.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmVehiculos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmVehiculos.Designer.cs">
+      <DependentUpon>frmVehiculos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmVehiculosAE.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmVehiculosAE.Designer.cs">
+      <DependentUpon>frmVehiculosAE.cs</DependentUpon>
+    </Compile>
     <Compile Include="Helpers\HelperCombos.cs" />
     <Compile Include="Helpers\HelperForm.cs" />
     <Compile Include="Helpers\HelperGrilla.cs" />
@@ -120,6 +150,9 @@
     <EmbeddedResource Include="frmClientesAE.resx">
       <DependentUpon>frmClientesAE.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmLugares.resx">
+      <DependentUpon>frmLugares.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmMarcas.resx">
       <DependentUpon>frmMarcas.cs</DependentUpon>
     </EmbeddedResource>
@@ -132,6 +165,12 @@
     <EmbeddedResource Include="frmSectores.resx">
       <DependentUpon>frmSectores.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmSeleccionarTarifa.resx">
+      <DependentUpon>frmSeleccionarTarifa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSeleccionarUbicacion.resx">
+      <DependentUpon>frmSeleccionarUbicacion.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmTarifas.resx">
       <DependentUpon>frmTarifas.cs</DependentUpon>
     </EmbeddedResource>
@@ -140,6 +179,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmTiposVehiculos.resx">
       <DependentUpon>frmTiposVehiculos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmVehiculos.resx">
+      <DependentUpon>frmVehiculos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmVehiculosAE.resx">
+      <DependentUpon>frmVehiculosAE.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -270,6 +315,75 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icons8-parking-lot-40 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-car-badge-40.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-car-badge-100.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-vehicles-402.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-vehicles-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-parking-lot-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-licence-plate-30.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-sedan-30.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\nissan_gtr_emblem_30px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sector.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\parking_and_4th_floor_30px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-parking-and-1st-floor-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-parking-and-1st-floor-40.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\open_garage_door_30px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\open_garage_door_30px1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-schedule-30.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-clock-301.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-parking-lot-40 %281%291.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\place_marker_30px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\garage_100pxp2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sell_property_100px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\purchase_order_30px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\payment50px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\payment_history_40px.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

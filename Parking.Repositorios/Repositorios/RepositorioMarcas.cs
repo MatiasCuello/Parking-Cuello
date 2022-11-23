@@ -49,7 +49,7 @@ namespace Parking.Repositorios.Repositorios
             {
                 MarcaId = reader.GetInt32(0),
                 Descripcion = reader.GetString(1),
-                RowVersion = (byte[])reader[2]
+                RowVersion = (byte[])reader[2],
             };
 
 
@@ -79,8 +79,7 @@ namespace Parking.Repositorios.Repositorios
             {
                 try
                 {
-                    string cadenaComando =
-                        "INSERT INTO Marcas (Descripcion) VALUES (@des)";
+                    string cadenaComando ="INSERT INTO Marcas (Descripcion) VALUES (@des)";
                     SqlCommand comando = new SqlCommand(cadenaComando, conexion);
                     comando.Parameters.AddWithValue("@des", marca.Descripcion);
 
@@ -151,7 +150,7 @@ namespace Parking.Repositorios.Repositorios
             }
         }
 
-        public Marca GetMarcaPorId(int id)
+        public Marca GetMarcaPorId(int marcaId)
         {
 
             Marca marca = null;
@@ -159,7 +158,7 @@ namespace Parking.Repositorios.Repositorios
             {
                 var cadenaComando = "SELECT MarcaId, Descripcion FROM Marcas WHERE MarcaId=@id";
                 var comando = new SqlCommand(cadenaComando, conexion);
-                comando.Parameters.AddWithValue("@id", id);
+                comando.Parameters.AddWithValue("@id", marcaId);
                 using (var reader = comando.ExecuteReader())
                 {
                     if (reader.HasRows)
@@ -167,6 +166,7 @@ namespace Parking.Repositorios.Repositorios
                         reader.Read();
                         marca = ConstruirMarca(reader);
                     }
+
                 }
                 return marca;
 

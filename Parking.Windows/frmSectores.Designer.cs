@@ -36,7 +36,6 @@ namespace Parking.Windows
             this.DatosDataGridView = new System.Windows.Forms.DataGridView();
             this.colSector = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColLugaresDisponbles = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColLugaresDisponiblesMotos = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ControlesToolStrip.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DatosDataGridView)).BeginInit();
@@ -84,8 +83,7 @@ namespace Parking.Windows
             this.DatosDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DatosDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colSector,
-            this.ColLugaresDisponbles,
-            this.ColLugaresDisponiblesMotos});
+            this.ColLugaresDisponbles});
             this.DatosDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DatosDataGridView.Location = new System.Drawing.Point(0, 0);
             this.DatosDataGridView.MultiSelect = false;
@@ -109,13 +107,6 @@ namespace Parking.Windows
             this.ColLugaresDisponbles.HeaderText = "Lugares Disp.";
             this.ColLugaresDisponbles.Name = "ColLugaresDisponbles";
             this.ColLugaresDisponbles.ReadOnly = true;
-            // 
-            // ColLugaresDisponiblesMotos
-            // 
-            this.ColLugaresDisponiblesMotos.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.ColLugaresDisponiblesMotos.HeaderText = "Lugares Disp. Motos";
-            this.ColLugaresDisponiblesMotos.Name = "ColLugaresDisponiblesMotos";
-            this.ColLugaresDisponiblesMotos.ReadOnly = true;
             // 
             // frmSectores
             // 
@@ -147,6 +138,5 @@ namespace Parking.Windows
         private System.Windows.Forms.DataGridView DatosDataGridView;
         private System.Windows.Forms.DataGridViewTextBoxColumn colSector;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColLugaresDisponbles;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ColLugaresDisponiblesMotos;
     }
 }

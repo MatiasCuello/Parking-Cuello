@@ -31,8 +31,8 @@ namespace Parking.Windows.Helpers
         {
             switch (obj)
             {
-                case TipoVehiculo v:
-                    r.Cells[0].Value = v.Descripcion;
+                case TipoVehiculo tv:
+                    r.Cells[0].Value = tv.Descripcion;
 
                     break;
 
@@ -55,11 +55,26 @@ namespace Parking.Windows.Helpers
                 case Sector s:
                     r.Cells[0].Value = s.Descripcion;
                     r.Cells[1].Value = s.LugaresDisponibles;
-                    r.Cells[2].Value = s.LugaresDisponiblesMotos;
 
 
                     break;
+                case Lugar l:
+                    r.Cells[0].Value = l.Descripcion;
+                    r.Cells[1].Value = l.Sector.Descripcion;
+                    r.Cells[2].Value = l.Disponible.ToString();
 
+                    break;
+
+                case Vehiculo v:
+                    r.Cells[0].Value = v.FechaHoraIngreso;
+                    r.Cells[1].Value = v.Patente;
+                    r.Cells[2].Value = v.TipoVehiculo.Descripcion;
+                    r.Cells[3].Value = v.Sector.Descripcion;
+                    r.Cells[4].Value = v.Lugar.Descripcion;
+                    r.Cells[5].Value = v.Estacionado;
+
+
+                    break;
             }
 
             r.Tag = obj;

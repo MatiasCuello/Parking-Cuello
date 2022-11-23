@@ -24,7 +24,7 @@ namespace Parking.Repositorios.Repositorios
             {
 
                 string cadenaComando =
-                    "SELECT TarifaId, TipoVehiculoId, TiempoId, Importe, RowVersion FROM Tarifas";
+                    "SELECT TarifaId, Descripcion, TipoVehiculoId, TiempoId, Importe, RowVersion FROM Tarifas";
                 SqlCommand comando = new SqlCommand(cadenaComando, conexion);
                 SqlDataReader reader = comando.ExecuteReader();
                 while (reader.Read())
@@ -49,10 +49,11 @@ namespace Parking.Repositorios.Repositorios
             return new Tarifa()
             {
                 TarifaId = reader.GetInt32(0),
-                TipoVehiculoId = reader.GetInt32(1),
-                TiempoId = reader.GetInt32(2),
-                Importe = reader.GetDecimal(3),
-                RowVersion = (byte[])reader[4],
+                Descripcion = reader.GetString(1),
+                TipoVehiculoId = reader.GetInt32(2),
+                TiempoId = reader.GetInt32(3),
+                Importe = reader.GetDecimal(4),
+                RowVersion = (byte[])reader[5],
             };
 
 
@@ -79,6 +80,8 @@ namespace Parking.Repositorios.Repositorios
             }
 
         }
+
+
 
         public int Agregar(Tarifa tarifa)
         {
@@ -153,32 +156,32 @@ namespace Parking.Repositorios.Repositorios
             }
         }
 
-        //public Tarifa GetTarifaPorId(int tarifaId)
-        //{
-        //    Tarifa tarifa = null;
-        //    try
-        //    {
-        //        var cadenaComando =
-        //            "SELECT TarifaId, TipoVehiculoId, TiempoId, Importe, RowVersion FROM Tarifas WHERE TarifaId=@id";
-        //        var comando = new SqlCommand(cadenaComando, conexion);
-        //        comando.Parameters.AddWithValue("@id", tarifaId);
-        //        using (var reader = comando.ExecuteReader())
-        //        {
-        //            if (reader.HasRows)
-        //            {
-        //                reader.Read();
-        //                tarifa = ConstruirTarifa(reader);
+        public Tarifa GetTarifaPorId(int tarifaId)
+        {
+            Tarifa tarifa = null;
+            try
+            {
+                var cadenaComando =
+                    "SELECT TarifaId, TipoVehiculoId, TiempoId, Importe, RowVersion FROM Tarifas WHERE TarifaId=@id";
+                var comando = new SqlCommand(cadenaComando, conexion);
+                comando.Parameters.AddWithValue("@id", tarifaId);
+                using (var reader = comando.ExecuteReader())
+                {
+                    if (reader.HasRows)
+                    {
+                        reader.Read();
+                        tarifa = ConstruirTarifa(reader);
 
-        //            }
-        //        }
+                    }
+                }
 
-        //        return tarifa;
-        //    }
-        //    catch (Exception e)
-        //    {
-        //        throw new Exception(e.Message);
-        //    }
-        //}
+                return tarifa;
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+        }
 
         public void Borrar(int tarifaId)
         {
@@ -199,7 +202,7 @@ namespace Parking.Repositorios.Repositorios
         {
             try
             {
-                var cadenaComando = "SELECT COUNT(*) FROM VehiculosAsociados WHERE TarifaId=@id";
+                var cadenaComando = "SELECT COUNT(*) FROM VehiculosRegistrados WHERE TarifaId=@id";
                 var comando = new SqlCommand(cadenaComando, conexion);
                 comando.Parameters.AddWithValue("@id", t.TarifaId);
                 return (int)comando.ExecuteScalar() > 0;

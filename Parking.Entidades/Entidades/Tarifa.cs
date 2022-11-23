@@ -9,6 +9,7 @@ namespace Parking.Entidades.Entidades
     public class Tarifa:ICloneable
     {
         public int TarifaId { get; set; }
+        public string Descripcion { get; set; }
         public int TipoVehiculoId { get; set; }
         public int TiempoId { get; set; }
         public decimal Importe { get; set; }

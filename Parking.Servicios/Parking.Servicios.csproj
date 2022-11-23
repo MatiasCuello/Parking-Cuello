@@ -43,11 +43,13 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Servicios\ServicioClientes.cs" />
+    <Compile Include="Servicios\ServicioLugares.cs" />
     <Compile Include="Servicios\ServicioMarcas.cs" />
     <Compile Include="Servicios\ServicioSectores.cs" />
     <Compile Include="Servicios\ServicioTarifas.cs" />
     <Compile Include="Servicios\ServicioTiempos.cs" />
     <Compile Include="Servicios\ServicioTiposVehiculos.cs" />
+    <Compile Include="Servicios\ServicioVehiculos.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Parking.Entidades\Parking.Entidades.csproj">

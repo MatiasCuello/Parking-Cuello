@@ -11,7 +11,6 @@ namespace Parking.Entidades.Entidades
         public int SectorId { get; set; }
         public string Descripcion { get; set; }
         public int LugaresDisponibles { get; set; }
-        public int LugaresDisponiblesMotos { get; set; }
         public byte[] RowVersion { get; set; }
     }
 }
