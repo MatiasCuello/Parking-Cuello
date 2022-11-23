@@ -191,6 +191,11 @@ namespace Parking.Windows
                 HelperMensaje.Mensaje(TipoMensaje.ERROR, exception.Message, "Error");
             }
         }
+
+        private void toolStripSeparator1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 

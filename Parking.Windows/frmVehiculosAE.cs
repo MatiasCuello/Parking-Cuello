@@ -40,8 +40,13 @@ namespace Parking.Windows
             HelperCombos.CargarDatosComboTiposVehiculos(ref TipoVehiculosComboBox);
             if (vehiculo != null)
             {
+                FechaYHoraDateTimePicker.Value = vehiculo.FechaHoraIngreso;
+                PatenteTextBox.Text = vehiculo.Patente;
                 TipoVehiculosComboBox.SelectedValue = vehiculo.TipoVehiculoId;
-
+                SectoresComboBox.SelectedValue = vehiculo.SectorId;
+                LugaresComboBox.SelectedValue = vehiculo.LugarId;
+                EstacionadoCheckBox.Checked = vehiculo.Estacionado;
+               
             }
         }
         private void TipoVehiculosComboBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -120,40 +125,11 @@ namespace Parking.Windows
 
             return valido;
         }
-        
 
-        
-        //private List<DetalleVehiculo> CargarDetalles()
-        //{
-        //    List<DetalleVehiculo> lista = new List<DetalleVehiculo>();
-
-        //    return lista;
-    
-
-        //    DialogResult = DialogResult.OK;
-
-        //}
-        //private List<DetalleVenta> CargarDetalles()
-        //{
-        //    List<DetalleVenta> lista = new List<DetalleVenta>();
-        //    foreach (var itemCarrito in Carrito.GetInstancia().GetItems())
-        //    {
-        //        var detalle = new DetalleVenta()
-        //        {
-        //            ProductoId = itemCarrito.ProductoId,
-        //            PrecioUnitario = itemCarrito.Precio,
-        //            Cantidad = itemCarrito.Cantidad,
-        //        };
-        //        lista.Add(detalle);
-        //    }
-
-        //    return lista;
-        //}
-
-        //public Venta GetVenta()
-        //{
-        //    return venta;
-        //}
+        internal void SetVehiculo(Vehiculo vehiculo)
+        {
+            this.vehiculo = vehiculo;
+        }
 
 
         private void frmVehiculosAE_Load(object sender, EventArgs e)

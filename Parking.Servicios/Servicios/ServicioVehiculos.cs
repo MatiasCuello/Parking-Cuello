@@ -83,5 +83,57 @@ namespace Parking.Servicios.Servicios
                 throw new Exception(e.Message);
             }
         }
+
+        public bool EstaRelacionado(Vehiculo vehiculo)
+        {
+            try
+            {
+                using (var cn = ConexionBD.GetInstancia().AbrirConexion())
+                {
+                    repositorio = new RepositorioVehiculos(cn);
+                    return repositorio.EstaRelacionado(vehiculo);
+                }
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+        }
+
+        public void Borrar(int vehiculoId)
+        {
+            try
+            {
+                using (var cn = ConexionBD.GetInstancia().AbrirConexion())
+                {
+                    repositorio = new RepositorioVehiculos(cn);
+                    repositorio.Borrar(vehiculoId);
+                }
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+        }
+
+        public int Editar(Vehiculo vehiculo)
+        {
+            try
+            {
+                int registros = 0;
+                using (var cn = ConexionBD.GetInstancia().AbrirConexion())
+                {
+                    repositorio = new RepositorioVehiculos(cn);
+                    registros = repositorio.Editar(vehiculo);
+                }
+
+                return registros;
+            }
+            catch (Exception e)
+            {
+
+                throw new Exception(e.Message);
+            }
+        }
     }
 }

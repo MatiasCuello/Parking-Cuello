@@ -95,49 +95,91 @@ namespace Parking.Windows
 
         private void BorrarToolStripButton_Click(object sender, EventArgs e)
         {
-            //if (DatosDataGridView.SelectedRows.Count == 0)
-            //{
-            //    return;
-            //}
+            try
+            {
+                var r = DatosDataGridView.SelectedRows[0];
+                Vehiculo v = (Vehiculo)r.Tag;
+                DialogResult dr = MessageBox.Show("¿Desea eliminar el vehiculo seleccionado?",
+                    "Confirmar",
+                    MessageBoxButtons.YesNo, MessageBoxIcon.Question,
+                    MessageBoxDefaultButton.Button2);
+                if (dr == DialogResult.No)
+                {
+                    return;
+                }
 
-            //var r = DatosDataGridView.SelectedRows[0];
-            //Vehiculo vehiculo = (Vehiculo)r.Tag;
-            //DialogResult dr = HelperMensaje.Mensaje("¿Desea borrar el vehiculo?",
-            //    "Confirmar eliminacion");
-            //if (dr == DialogResult.No)
-            //{
-            //    return;
-            //}
-            //try
-            //{
-            //    if (servicio.EstaRelacionado(vehiculo))
-            //    {
-            //        HelperMensaje.Mensaje(TipoMensaje.ERROR, "Vehiculo relacionado!!", "ERROR");
-            //    }
-            //    else
-            //    {
-            //        int registros = servicio.Editar(vehiculo);
-            //        if (registros == 0)
-            //        {
-            //            HelperMensaje.Mensaje(TipoMensaje.WARNING, "No se modifico el ", "Advertencia");
-            //        }
-            //        else
-            //        {
-            //            HelperGrilla.BorrarFila(DatosDataGridView, r);
+                if (!servicio.EstaRelacionado(v))
+                {
+                    servicio.Borrar(v.VehiculoId);
+                    HelperGrilla.BorrarFila(DatosDataGridView, r);
+                    HelperMensaje.Mensaje(TipoMensaje.OK, "Vehiculo eliminado...", "Mensaje");
 
-            //            HelperMensaje.Mensaje(TipoMensaje.OK, "tarifa borrado", "Mensaje");
-            //        }
-            //    }
-            //}
-            //catch (Exception exception)
-            //{
-            //    HelperMensaje.Mensaje(TipoMensaje.ERROR, exception.Message, "Error");
-            //}
+                }
+                else
+                {
+                    HelperMensaje.Mensaje(TipoMensaje.ERROR, "Vehiculo relacionado... Eliminacion denegada", "Error");
+
+                }
+            }
+            catch (Exception exception)
+            {
+                HelperMensaje.Mensaje(TipoMensaje.ERROR, exception.Message, "Error");
+
+            }
         }
 
         private void RetiroToolStripButton_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void EditarToolStripButton_Click(object sender, EventArgs e)
+        {
+            if (DatosDataGridView.SelectedRows.Count == 0)
+            {
+                return;
+            }
+            int registrosAfectados = 0;
+            var r = DatosDataGridView.SelectedRows[0];
+            Vehiculo vehiculo = (Vehiculo)r.Tag;
+            frmVehiculosAE frm = new frmVehiculosAE() { Text = "Editar Vehiculo" };
+            frm.SetVehiculo(vehiculo);
+            DialogResult dr = frm.ShowDialog(this);
+            if (dr == DialogResult.Cancel)
+            {
+                return;
+            }
+            try
+            {
+
+                vehiculo = frm.GetVehiculo();
+                if (servicio.Existe(vehiculo))
+                {
+                    HelperMensaje.Mensaje(TipoMensaje.ERROR, "Vehiculo repetido...", "ERROR");
+                }
+                else
+                {
+                    registrosAfectados = servicio.Editar(vehiculo);
+                    if (registrosAfectados == 0)
+                    {
+
+                        HelperMensaje.Mensaje(TipoMensaje.WARNING, "No se pudo modificar el vehiculo", "Mensaje");
+
+                    }
+                    else
+                    {
+                        HelperGrilla.SetearFila(r, vehiculo);
+                        HelperMensaje.Mensaje(TipoMensaje.OK, "Vehiculo editado", "Mensaje");
+
+
+                    }
+                }
+
+            }
+            catch (Exception exception)
+            {
+                HelperMensaje.Mensaje(TipoMensaje.ERROR, exception.Message, "Error");
+            }
         }
     }
 }

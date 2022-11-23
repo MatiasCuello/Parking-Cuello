@@ -202,7 +202,7 @@ namespace Parking.Repositorios.Repositorios
         {
             try
             {
-                var cadenaComando = "SELECT COUNT(*) FROM VehiculosRegistrados WHERE TarifaId=@id";
+                var cadenaComando = "SELECT COUNT(*) FROM DetalleVehiculos WHERE TarifaId=@id";
                 var comando = new SqlCommand(cadenaComando, conexion);
                 comando.Parameters.AddWithValue("@id", t.TarifaId);
                 return (int)comando.ExecuteScalar() > 0;

@@ -120,5 +120,74 @@ namespace Parking.Repositorios.Repositorios
             }
 
         }
+
+        public int Editar(Vehiculo vehiculo)
+        {
+            int registrosAfectados = 0;
+            try
+            {
+                string cadenaComando =
+                    "UPDATE Vehiculos SET FechaHoraIngreso=@fyhingreso, Patente=@patente," +
+                    " TipoVehiculoId=@tipoVehiculoId, SectorId=@sectorId, LugarId=@lugarId, Estacionado=@estacionado " +
+                    "WHERE VehiculoId=@id";
+                SqlCommand comando = new SqlCommand(cadenaComando, conexion);
+                comando.Parameters.AddWithValue("@fyhingreso", vehiculo.FechaHoraIngreso);
+                comando.Parameters.AddWithValue("@patente", vehiculo.Patente);
+                comando.Parameters.AddWithValue("@tipoVehiculoId", vehiculo.TipoVehiculoId);
+                comando.Parameters.AddWithValue("@sectorId", vehiculo.SectorId);
+                comando.Parameters.AddWithValue("@lugarId", vehiculo.LugarId);
+                comando.Parameters.AddWithValue("@estacionado", vehiculo.Estacionado);
+                comando.Parameters.AddWithValue("@id", vehiculo.VehiculoId);
+                registrosAfectados = comando.ExecuteNonQuery();
+                if (registrosAfectados == 0)
+                {
+                    throw new Exception("No se ha modificado ningun registro");
+                }
+                else
+                {
+
+                    cadenaComando = "SELECT RowVersion FROM Vehiculos WHERE VehiculoId=@id";
+                    comando = new SqlCommand(cadenaComando, conexion);
+                    comando.Parameters.AddWithValue("@id", vehiculo.VehiculoId);
+                    vehiculo.RowVersion = (byte[])comando.ExecuteScalar();
+                }
+
+                return registrosAfectados;
+            }
+            catch (Exception)
+            {
+                throw new Exception("Error al intentar modificar el registro");
+            }
+        }
+
+        public void Borrar(int vehiculoId)
+        {
+            try
+            {
+                string cadenaComando = "DELETE FROM Vehiculos WHERE VehiculoId=@id";
+                SqlCommand comando = new SqlCommand(cadenaComando, conexion);
+                comando.Parameters.AddWithValue("@id", vehiculoId);
+                comando.ExecuteNonQuery();
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+        }
+
+        public bool EstaRelacionado(Vehiculo vehiculo)
+        {
+            try
+            {
+                var cadenaComando = "SELECT COUNT(*) FROM DetalleVehiculos WHERE VehiculoId=@id";
+                var comando = new SqlCommand(cadenaComando, conexion);
+                comando.Parameters.AddWithValue("@id", vehiculo.VehiculoId);
+                return (int)comando.ExecuteScalar() > 0;
+            }
+            catch (Exception e)
+            {
+                throw new Exception(e.Message);
+            }
+        }
     }
 }
