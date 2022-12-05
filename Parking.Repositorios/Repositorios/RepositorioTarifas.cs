@@ -17,15 +17,29 @@ namespace Parking.Repositorios.Repositorios
             this.conexion = conexion;
         }
 
-        public List<Tarifa> GetLista()
+        public List<Tarifa> GetLista(TipoVehiculo tipoVehiculo=null)
         {
             List<Tarifa> lista = new List<Tarifa>();
             try
             {
+                StringBuilder sb = new StringBuilder(" SELECT TarifaId, Descripcion, TipoVehiculoId, TiempoId, Importe, RowVersion FROM Tarifas ");
+                if (tipoVehiculo != null)
+                {
+                    sb.Append("WHERE TipoVehiculoId=@tipoVehiculoId ORDER BY TarifaId");
+                }
+                else
+                {
+                    sb.Append(" ORDER BY TarifaId");
+                }
 
-                string cadenaComando =
-                    "SELECT TarifaId, Descripcion, TipoVehiculoId, TiempoId, Importe, RowVersion FROM Tarifas";
+                //string cadenaComando =
+                //    "SELECT TarifaId, Descripcion, TipoVehiculoId, TiempoId, Importe, RowVersion FROM Tarifas";
+                string cadenaComando = sb.ToString();
                 SqlCommand comando = new SqlCommand(cadenaComando, conexion);
+                if (tipoVehiculo != null)
+                {
+                    comando.Parameters.AddWithValue("@tipoVehiculoId", tipoVehiculo.TipoVehiculoId);
+                }
                 SqlDataReader reader = comando.ExecuteReader();
                 while (reader.Read())
                 {

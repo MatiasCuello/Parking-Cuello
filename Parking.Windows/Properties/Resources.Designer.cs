@@ -83,6 +83,16 @@ namespace Parking.Windows.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap billete {
+            get {
+                object obj = ResourceManager.GetObject("billete", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Cancelar {
             get {
                 object obj = ResourceManager.GetObject("Cancelar", resourceCulture);
@@ -176,6 +186,26 @@ namespace Parking.Windows.Properties {
         internal static System.Drawing.Bitmap close_window_50px1 {
             get {
                 object obj = ResourceManager.GetObject("close_window_50px1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap exit_30px {
+            get {
+                object obj = ResourceManager.GetObject("exit_30px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap exit_30pxs {
+            get {
+                object obj = ResourceManager.GetObject("exit_30pxs", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -786,6 +816,16 @@ namespace Parking.Windows.Properties {
         internal static System.Drawing.Bitmap sell_property_100px {
             get {
                 object obj = ResourceManager.GetObject("sell_property_100px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap tarjeta {
+            get {
+                object obj = ResourceManager.GetObject("tarjeta", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

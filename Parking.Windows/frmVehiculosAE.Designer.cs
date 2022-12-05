@@ -35,6 +35,8 @@ namespace Parking.Windows
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.FechaYHoraDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.EstacionadoLabel = new System.Windows.Forms.Label();
+            this.EstacionadoCheckBox = new System.Windows.Forms.CheckBox();
             this.LugaresComboBox = new System.Windows.Forms.ComboBox();
             this.SectoresComboBox = new System.Windows.Forms.ComboBox();
             this.pictureBox9 = new System.Windows.Forms.PictureBox();
@@ -53,8 +55,6 @@ namespace Parking.Windows
             this.OkButton = new System.Windows.Forms.Button();
             this.CancelButton = new System.Windows.Forms.Button();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.EstacionadoCheckBox = new System.Windows.Forms.CheckBox();
-            this.EstacionadoLabel = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -131,6 +131,28 @@ namespace Parking.Windows
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(502, 267);
             this.panel2.TabIndex = 218;
+            // 
+            // EstacionadoLabel
+            // 
+            this.EstacionadoLabel.AutoSize = true;
+            this.EstacionadoLabel.BackColor = System.Drawing.Color.Gainsboro;
+            this.EstacionadoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.EstacionadoLabel.Location = new System.Drawing.Point(52, 225);
+            this.EstacionadoLabel.Name = "EstacionadoLabel";
+            this.EstacionadoLabel.Size = new System.Drawing.Size(99, 16);
+            this.EstacionadoLabel.TabIndex = 224;
+            this.EstacionadoLabel.Text = "Estacionado:";
+            // 
+            // EstacionadoCheckBox
+            // 
+            this.EstacionadoCheckBox.AutoSize = true;
+            this.EstacionadoCheckBox.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.EstacionadoCheckBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.EstacionadoCheckBox.Location = new System.Drawing.Point(170, 227);
+            this.EstacionadoCheckBox.Name = "EstacionadoCheckBox";
+            this.EstacionadoCheckBox.Size = new System.Drawing.Size(15, 14);
+            this.EstacionadoCheckBox.TabIndex = 223;
+            this.EstacionadoCheckBox.UseVisualStyleBackColor = true;
             // 
             // LugaresComboBox
             // 
@@ -312,28 +334,6 @@ namespace Parking.Windows
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
-            // 
-            // EstacionadoCheckBox
-            // 
-            this.EstacionadoCheckBox.AutoSize = true;
-            this.EstacionadoCheckBox.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.EstacionadoCheckBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.EstacionadoCheckBox.Location = new System.Drawing.Point(170, 227);
-            this.EstacionadoCheckBox.Name = "EstacionadoCheckBox";
-            this.EstacionadoCheckBox.Size = new System.Drawing.Size(15, 14);
-            this.EstacionadoCheckBox.TabIndex = 223;
-            this.EstacionadoCheckBox.UseVisualStyleBackColor = true;
-            // 
-            // EstacionadoLabel
-            // 
-            this.EstacionadoLabel.AutoSize = true;
-            this.EstacionadoLabel.BackColor = System.Drawing.Color.Gainsboro;
-            this.EstacionadoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.EstacionadoLabel.Location = new System.Drawing.Point(52, 225);
-            this.EstacionadoLabel.Name = "EstacionadoLabel";
-            this.EstacionadoLabel.Size = new System.Drawing.Size(61, 16);
-            this.EstacionadoLabel.TabIndex = 224;
-            this.EstacionadoLabel.Text = "Estado:";
             // 
             // frmVehiculosAE
             // 

@@ -117,27 +117,20 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="errorProvider1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
-  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>51</value>
-  </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="PagarButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="RetirarButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAbRJREFUWEft
-        18srRUEAx/HL2sojivKIsvHaWXltPJaKP0YprCgRC6z4f0gpsaBYsWFByKM8vr+6U9OcmXvOHHRKfvXJ
-        bc48zJw5c+4t/SdnatCNoTJ9VtmvpguLOMAHPh3v2McCOvFjqcMm3uAOGvKKddTiWxnDLXyDZHGDUeTK
-        LF7g6zjGM2YQlRHELHka9TWMTGnANXwdfccVtJ9SswFfB7G09HdO2Roqph3awXajPLR3JjGI+3KZKW9F
-        MHqG7Y7yMIObTMO+Po9gjmFXjvUAnYwmzTiDXecI3tTDrhjLnXkjTuDW0ynqPaD64VbOyp15C9yZ23qR
-        yAR8lXXPtpwym2Y+BZMmnMJX1xhHIlo+t+ISlCpsw72eZ3DRZBPpg1txF9UwWYa59gh32c9htw/pQSKh
-        Tajl1woo+ruDvDOX4CZU9Ij4Grn/hFbLJGZwOUQw2nC+RuLeDqUNl/DVD5lDMGlHsTaiWYnYmYtuXcWj
-        WFmFr7Gxhw7EzlxWkJosr2P7BZNV5texMoAn+DrKQ4+sTtqoFPqVzESPW557bVzAe+7HpNCv5XYK+2Hi
-        SyE/zf5iSqUv757rpOEFJMEAAAAASUVORK5CYII=
+        iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAABGdBTUEAALGPC/xhBQAAAY1JREFUSEvt
+        178rRWEcx/ErlJSkGCQGP8rGP4BIyf8gg5IsMsmiDAabMhhkNGBQkgwMBgoLGZSMpGQgWfz2/pzjXLfj
+        eZ579Nyz+dSrnnM69/u5t+55zr0ZQ5qxhTt8enjBBSZQDGeqcAPTIB/TcGYEuvAJQ+j10I9VaN49imDN
+        PHThZnDkn1ZEn7pBJ2xZgC5aD47804SoWGtr/ov/kgGMh8tsKnCCVIuPoNcuokQnvlOODaRWfAq9VvZR
+        jSilKAuX5hSqWC7RgkRxFXdgGWsW2iRyi+UKbcgbV/Ee4oOTeEQfnHEVHyA+NKk3jMGatIojkzAmzWLd
+        z3UwJq3ibWgzscZVvIT4wCRW4LyHFVexdqNGh3PES2fhfA5HcRXnS+4G8oxBJE4hirWR9OhETrT51IZL
+        c3yK9avlGu3B0U+G8YrUHhL61laGy2zq8Q7NTK3YFJVp3n/xr8xAFx0HR/7phuZ9QH8WrOlE9A7PsONh
+        Fw/QrEPkzRyi8kK4RfwWs6YLU9CW52MUNYglk/kCpIQ1tg7YKNAAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="CancelarButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="VolverButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAbJJREFUWEft
         17tKxEAUxvFVWysvtQgKNt5eQNFKX0CfRtBKK1HBS+MdfRlFBHsFRS20FS+F+v8gA4fJyZrsrgyIH/zY
@@ -150,4 +143,7 @@
         r9lfTK32DfBC2N7BAISFAAAAAElFTkSuQmCC
 </value>
   </data>
+  <metadata name="errorProvider1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
 </root>

@@ -137,6 +137,7 @@ namespace Parking.Windows
 
         }
         Sector sector;
+        Lugar lugar;
         private void SectoresComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (SectoresComboBox.SelectedIndex > 0)
@@ -152,6 +153,6 @@ namespace Parking.Windows
             }
         }
 
-
+       
     }
 }

@@ -50,6 +50,7 @@
     <Compile Include="Entidades\Tiempo.cs" />
     <Compile Include="Entidades\TipoVehiculo.cs" />
     <Compile Include="Entidades\Vehiculo.cs" />
+    <Compile Include="Enums\FormaDePago.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />

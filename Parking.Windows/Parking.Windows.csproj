@@ -36,6 +36,7 @@
     <Reference Include="FontAwesome.Sharp, Version=6.1.1.0, Culture=neutral, PublicKeyToken=d16d1e4e568ec10f, processorArchitecture=MSIL">
       <HintPath>..\packages\FontAwesome.Sharp.6.1.1\lib\net472\FontAwesome.Sharp.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
     <Reference Include="System" />
@@ -53,6 +54,12 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmCobro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCobro.Designer.cs">
+      <DependentUpon>frmCobro.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmLugares.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -149,6 +156,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmClientesAE.resx">
       <DependentUpon>frmClientesAE.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCobro.resx">
+      <DependentUpon>frmCobro.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmLugares.resx">
       <DependentUpon>frmLugares.cs</DependentUpon>
@@ -384,6 +394,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\payment_history_40px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\exit_30px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\exit_30pxs.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\billete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tarjeta.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

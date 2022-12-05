@@ -71,10 +71,10 @@ namespace Parking.Windows.Helpers
             combo.ValueMember = "LugarId";
             combo.SelectedIndex = 0;
         }
-        public static void CargarDatosComboTarifas(ref ComboBox combo)
+        public static void CargarDatosComboTarifas(ref ComboBox combo,TipoVehiculo tipoVehiculo)
         {
             ServicioTarifas servicio = new ServicioTarifas();
-            var lista = servicio.GetLista();
+            var lista = servicio.GetLista(tipoVehiculo);
             var defaultTarifa = new Tarifa()
             {
                 TarifaId = 0,

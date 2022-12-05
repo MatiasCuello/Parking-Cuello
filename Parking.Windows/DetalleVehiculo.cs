@@ -25,7 +25,7 @@ namespace Parking.Windows
         {
             base.OnLoad(e);
             servicio = new ServicioTarifas();
-            HelperCombos.CargarDatosComboTarifas(ref TarifasComboBox);
+            HelperCombos.CargarDatosComboTarifas(ref TarifasComboBox,null);
         }
         private void CancelButton_Click(object sender, EventArgs e)
         {

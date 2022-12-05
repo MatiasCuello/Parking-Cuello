@@ -61,21 +61,36 @@ namespace Parking.Repositorios.Repositorios
 
         public bool Existe(Vehiculo vehiculo)
         {
-            try
+            var cadenaComando = "SELECT COUNT(*) FROM Vehiculos WHERE Patente=@p";
+            if (vehiculo.VehiculoId != 0)
             {
-                var cadenaComando = "SELECT VehiculoId, Patente FROM Vehiculos" +
-                                     " WHERE Patente=@patente AND VehiculoId=@id ";
-                var comando = new SqlCommand(cadenaComando, conexion);
-                comando.Parameters.AddWithValue("@patente", vehiculo.Patente);
-                comando.Parameters.AddWithValue("@id", vehiculo.VehiculoId);
-                var reader = comando.ExecuteReader();
-                return reader.HasRows;
+                cadenaComando += " AND VehiculoId<>@id";
             }
-            catch (Exception e)
-            {
 
-                throw new Exception(e.Message);
+            var comando = new SqlCommand(cadenaComando, conexion);
+            comando.Parameters.AddWithValue("@p", vehiculo.Patente);
+            if (vehiculo.VehiculoId != 0)
+            {
+                comando.Parameters.AddWithValue("@id", vehiculo.VehiculoId);
             }
+
+            return (int)comando.ExecuteScalar() > 0;
+            //try
+            //{
+            //    var cadenaComando = "SELECT VehiculoId, Patente FROM Vehiculos" +
+            //                         " WHERE Patente=@patente AND VehiculoId=@id ";
+            //    var comando = new SqlCommand(cadenaComando, conexion);
+
+            //    comando.Parameters.AddWithValue("@patente", vehiculo.Patente);
+            //    comando.Parameters.AddWithValue("@id", vehiculo.VehiculoId);
+            //    var reader = comando.ExecuteReader();
+            //    return reader.HasRows;
+            //}
+            //catch (Exception e)
+            //{
+
+            //    throw new Exception(e.Message);
+            //}
         }
 
         public int Agregar(Vehiculo vehiculo)

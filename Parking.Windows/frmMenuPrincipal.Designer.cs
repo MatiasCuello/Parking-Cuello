@@ -92,7 +92,7 @@ namespace Parking.Windows
             this.TituloToolStripMenuItem});
             this.TituloMenuStrip.Location = new System.Drawing.Point(0, 0);
             this.TituloMenuStrip.Name = "TituloMenuStrip";
-            this.TituloMenuStrip.Size = new System.Drawing.Size(984, 72);
+            this.TituloMenuStrip.Size = new System.Drawing.Size(884, 72);
             this.TituloMenuStrip.TabIndex = 3;
             // 
             // TituloToolStripMenuItem
@@ -108,7 +108,7 @@ namespace Parking.Windows
             // 
             this.SalirButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SalirButton.Image = global::Parking.Windows.Properties.Resources.Salir;
-            this.SalirButton.Location = new System.Drawing.Point(919, 0);
+            this.SalirButton.Location = new System.Drawing.Point(819, 0);
             this.SalirButton.Name = "SalirButton";
             this.SalirButton.Size = new System.Drawing.Size(65, 72);
             this.SalirButton.TabIndex = 0;
@@ -220,7 +220,7 @@ namespace Parking.Windows
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DimGray;
-            this.ClientSize = new System.Drawing.Size(984, 361);
+            this.ClientSize = new System.Drawing.Size(884, 261);
             this.ControlBox = false;
             this.Controls.Add(this.SalirButton);
             this.Controls.Add(this.TarifasButton);

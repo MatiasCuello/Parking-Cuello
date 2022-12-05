@@ -20,7 +20,7 @@ namespace Parking.Servicios.Servicios
 
         }
 
-        public List<Tarifa> GetLista()
+        public List<Tarifa> GetLista(TipoVehiculo tipoVehiculo=null)
         {
             try
             {
@@ -30,7 +30,7 @@ namespace Parking.Servicios.Servicios
                     repositorio = new RepositorioTarifas(cn);
                     repoTiposVehiculos = new RepositorioTiposVehiculos(cn);
                     repoTiempos = new RepositorioTiempos(cn);
-                    lista = repositorio.GetLista();
+                    lista = repositorio.GetLista(tipoVehiculo);
                     foreach (var tarifa in lista)
                     {
                         tarifa.TipoVehiculo = repoTiposVehiculos.GetTipoVehiculoPorId(tarifa.TipoVehiculoId);
@@ -96,6 +96,7 @@ namespace Parking.Servicios.Servicios
                 throw new Exception(e.Message);
             }
         }
+
 
         public void Borrar(int tarifaId)
         {

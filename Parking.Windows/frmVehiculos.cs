@@ -21,6 +21,8 @@ namespace Parking.Windows
         }
         private ServicioVehiculos servicio;
         private List<Vehiculo> lista;
+        
+
         private void tsbCerrar_Click(object sender, EventArgs e)
         {
             Close();
@@ -32,7 +34,7 @@ namespace Parking.Windows
         private void NuevoToolStripButton_Click(object sender, EventArgs e)
         {
 
-            frmVehiculosAE frm = new frmVehiculosAE() { Text = "Nueva Vehiculo Ingresante" };
+            frmVehiculosAE frm = new frmVehiculosAE() { Text = "Nuevo Vehiculo Ingresante" };
             DialogResult dr = frm.ShowDialog(this);
             if (dr == DialogResult.Cancel)
             {
@@ -51,6 +53,7 @@ namespace Parking.Windows
                         var r = HelperGrilla.ConstruirFila(DatosDataGridView);
                         HelperGrilla.SetearFila(r, vehiculo);
                         HelperGrilla.AgregarFila(DatosDataGridView, r);
+                        RecargarGrilla();
 
                     }
                     else
@@ -60,7 +63,7 @@ namespace Parking.Windows
                         var r = HelperGrilla.ConstruirFila(DatosDataGridView);
                         HelperGrilla.SetearFila(r, vehiculo);
                         HelperGrilla.AgregarFila(DatosDataGridView, r);
-
+                        RecargarGrilla();
                     }
 
 
@@ -113,7 +116,7 @@ namespace Parking.Windows
                     servicio.Borrar(v.VehiculoId);
                     HelperGrilla.BorrarFila(DatosDataGridView, r);
                     HelperMensaje.Mensaje(TipoMensaje.OK, "Vehiculo eliminado...", "Mensaje");
-
+                    
                 }
                 else
                 {
@@ -128,18 +131,13 @@ namespace Parking.Windows
             }
         }
 
-        private void RetiroToolStripButton_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void EditarToolStripButton_Click(object sender, EventArgs e)
         {
             if (DatosDataGridView.SelectedRows.Count == 0)
             {
                 return;
             }
-            int registrosAfectados = 0;
+            
             var r = DatosDataGridView.SelectedRows[0];
             Vehiculo vehiculo = (Vehiculo)r.Tag;
             frmVehiculosAE frm = new frmVehiculosAE() { Text = "Editar Vehiculo" };
@@ -156,10 +154,11 @@ namespace Parking.Windows
                 if (servicio.Existe(vehiculo))
                 {
                     HelperMensaje.Mensaje(TipoMensaje.ERROR, "Vehiculo repetido...", "ERROR");
+ 
                 }
                 else
                 {
-                    registrosAfectados = servicio.Editar(vehiculo);
+                    int registrosAfectados = servicio.Editar(vehiculo);
                     if (registrosAfectados == 0)
                     {
 
@@ -170,10 +169,11 @@ namespace Parking.Windows
                     {
                         HelperGrilla.SetearFila(r, vehiculo);
                         HelperMensaje.Mensaje(TipoMensaje.OK, "Vehiculo editado", "Mensaje");
-
+                        RecargarGrilla();
 
                     }
                 }
+                
 
             }
             catch (Exception exception)
@@ -181,5 +181,32 @@ namespace Parking.Windows
                 HelperMensaje.Mensaje(TipoMensaje.ERROR, exception.Message, "Error");
             }
         }
+
+
+        private void DatosDataGridView_SelectionChanged(object sender, EventArgs e)
+        {
+            if (DatosDataGridView.Rows.Count>1)
+            {
+                var r = DatosDataGridView.SelectedRows[0];
+                Vehiculo v = (Vehiculo)r.Tag;
+                //MessageBox.Show(v.Estacionado.ToString());
+                if (v.Estacionado == true)
+                {
+
+                    DialogResult dr=MessageBox.Show("Desea retirar el vehiculo estacionado?", "Retiro de Vehiculo",
+                        MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
+                    if (dr== DialogResult.Yes)
+                    {
+                        frmRetiro frm = new frmRetiro() { Text = "Retiro de Vehiculo"};
+                        frm.SetVehiculo(v);
+                        frm.Show();
+                    }
+                    
+
+                }
+
+            }
+        }
+
     }
 }
